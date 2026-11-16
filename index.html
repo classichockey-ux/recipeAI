@@ -10,8 +10,9 @@
     <style>
 
         /* =========================
-           전체 기본 설정
+           1. 전체 기본 설정
         ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -31,10 +32,16 @@
 
 
         /* =========================
-           상단 영역
+           2. 상단 Header
         ========================= */
+
         header {
-            background: linear-gradient(135deg, #ff8a00, #ff5e62);
+            background: linear-gradient(
+                135deg,
+                #ff8a00,
+                #ff5e62
+            );
+
             color: white;
             text-align: center;
             padding: 80px 20px;
@@ -52,27 +59,37 @@
 
 
         /* 지금 시작하기 버튼 */
+
         .btn {
             display: inline-block;
             margin-top: 30px;
+
             padding: 14px 30px;
+
             background: white;
             color: #ff5e62;
+
             text-decoration: none;
+
             border-radius: 30px;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
 
         /* =========================
-           기본 Section
+           3. 기본 Section
         ========================= */
+
         section {
             max-width: 1100px;
             margin: auto;
@@ -87,122 +104,67 @@
 
         .section-description {
             text-align: center;
-            margin-bottom: 30px;
             color: #666;
+            margin-bottom: 35px;
         }
 
 
         /* =========================
-           재료 입력 영역
+           4. 기능 카드
         ========================= */
-        .recipe-area {
-            max-width: 650px;
-            margin: 30px auto;
-            padding: 35px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
 
-
-        /* 재료 입력창 */
-        #ingredients {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        #ingredients:focus {
-            outline: none;
-            border-color: #ff5e62;
-            box-shadow: 0 0 0 3px rgba(255,94,98,0.12);
-        }
-
-
-        /* 레시피 추천 버튼 */
-        #recommendButton {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #ff8a00, #ff5e62);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #recommendButton:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================
-           추천 결과
-        ========================= */
-        #result {
-            display: none;
-            margin-top: 30px;
-            padding: 25px;
-            background: #fff7f2;
-            border-left: 5px solid #ff5e62;
-            border-radius: 10px;
-        }
-
-        #result h3 {
-            color: #e94f54;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        #result p {
-            margin-bottom: 10px;
-        }
-
-
-        /* =========================
-           기능 카드
-        ========================= */
         .features {
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
 
             gap: 25px;
         }
 
+
         .card {
             height: 100%;
+
             background: white;
+
             border-radius: 15px;
-            padding: 30px;
+
+            padding: 35px 25px;
+
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+
             transition: 0.3s;
+
+            cursor: pointer;
         }
+
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.13);
         }
+
 
         .icon {
             font-size: 50px;
             margin-bottom: 15px;
         }
 
+
         .card h3 {
             margin-bottom: 10px;
         }
 
 
-        /* 카드 자체를 링크로 사용 */
         .card-link {
             text-decoration: none;
             color: inherit;
@@ -211,30 +173,174 @@
 
 
         /* =========================
-           RecipeAI 설명
+           5. 레시피 입력 영역
         ========================= */
-        .about-text {
+
+        .recipe-area {
+            max-width: 650px;
+
+            margin: 30px auto;
+
+            padding: 35px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* 현재 선택한 기능 표시 */
+
+        #selectedMode {
             text-align: center;
+
+            margin-bottom: 25px;
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            background: #fff4ef;
+
+            color: #ff5e62;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+
+        /* 재료 입력칸 */
+
+        #ingredients {
+            width: 100%;
+
+            padding: 15px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+        }
+
+
+        #ingredients:focus {
+            outline: none;
+
+            border-color: #ff5e62;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(255, 94, 98, 0.12);
+        }
+
+
+        /* 추천 버튼 */
+
+        #recommendButton {
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff8a00,
+                    #ff5e62
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        #recommendButton:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           6. 추천 결과
+        ========================= */
+
+        #result {
+            display: none;
+
+            margin-top: 30px;
+
+            padding: 25px;
+
+            background: #fff8f3;
+
+            border-left: 5px solid #ff5e62;
+
+            border-radius: 10px;
+        }
+
+
+        #result h3 {
+            color: #e94f54;
+            margin-bottom: 15px;
+        }
+
+
+        #result p {
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           7. 소개
+        ========================= */
+
+        .about-text {
             max-width: 800px;
+
             margin: auto;
+
+            text-align: center;
+
             font-size: 18px;
         }
 
 
         /* =========================
-           Footer
+           8. Footer
         ========================= */
+
         footer {
             text-align: center;
-            padding: 30px;
+
+            padding: 30px 20px;
+
             background: #222;
+
             color: white;
         }
 
 
         /* =========================
-           모바일 환경
+           9. 스마트폰 대응
         ========================= */
+
         @media (max-width: 768px) {
 
             header {
@@ -246,7 +352,7 @@
             }
 
             section {
-                padding: 50px 20px;
+                padding: 50px 18px;
             }
 
             .recipe-area {
@@ -256,7 +362,6 @@
         }
 
     </style>
-
 </head>
 
 
@@ -264,18 +369,23 @@
 
 
     <!-- =========================
-         1. 상단
+         상단
     ========================== -->
 
     <header>
 
-        <h1>🍳 RecipeAI</h1>
+        <h1>
+            🍳 RecipeAI
+        </h1>
 
         <p>
             냉장고 속 재료로 오늘의 요리를 찾아보세요.
         </p>
 
-        <a href="#recipe" class="btn">
+        <a
+            href="#recipe"
+            class="btn"
+        >
             지금 시작하기
         </a>
 
@@ -284,63 +394,10 @@
 
 
     <!-- =========================
-         2. 재료 입력 및 추천
+         주요 기능
     ========================== -->
 
-    <section id="recipe">
-
-        <h2>
-            🍳 나만의 레시피 찾기
-        </h2>
-
-        <p class="section-description">
-            냉장고에 있는 재료를 쉼표로 구분하여 입력해 보세요.
-        </p>
-
-
-        <div class="recipe-area">
-
-
-            <!-- 사용자 입력창 -->
-
-            <input
-                type="text"
-                id="ingredients"
-                placeholder="예: 두부, 김치, 계란"
-                autocomplete="off"
-            >
-
-
-            <!-- 추천 실행 버튼 -->
-
-            <button
-                type="button"
-                id="recommendButton"
-            >
-                🤖 레시피 추천받기
-            </button>
-
-
-            <!-- 추천 결과가 나타나는 곳 -->
-
-            <div
-                id="result"
-                aria-live="polite"
-            >
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         3. 주요 기능
-    ========================== -->
-
-    <section>
+    <section id="features">
 
         <h2>
             RecipeAI 주요 기능
@@ -354,16 +411,14 @@
         <div class="features">
 
 
-            <!--
-                AI 레시피 추천
-
-                클릭하면 위의
-                id="recipe" 영역으로 이동합니다.
-            -->
+            <!-- =====================
+                 AI 레시피 추천
+            ====================== -->
 
             <a
                 href="#recipe"
-                class="card-link"
+                class="card-link feature-select"
+                data-mode="normal"
             >
 
                 <div class="card">
@@ -387,49 +442,71 @@
 
 
 
-            <!-- 건강한 식단 -->
+            <!-- =====================
+                 건강한 식단
+            ====================== -->
 
-            <div class="card">
+            <a
+                href="#recipe"
+                class="card-link feature-select"
+                data-mode="healthy"
+            >
 
-                <div class="icon">
-                    🥗
+                <div class="card">
+
+                    <div class="icon">
+                        🥗
+                    </div>
+
+                    <h3>
+                        건강한 식단
+                    </h3>
+
+                    <p>
+                        건강과 영양을 고려한
+                        레시피를 추천받아 보세요.
+                    </p>
+
                 </div>
 
-                <h3>
-                    건강한 식단
-                </h3>
-
-                <p>
-                    건강과 영양을 고려한
-                    식단 기능으로 발전시킬 예정입니다.
-                </p>
-
-            </div>
+            </a>
 
 
 
-            <!-- 빠른 요리 -->
+            <!-- =====================
+                 빠른 요리
+            ====================== -->
 
-            <div class="card">
+            <a
+                href="#recipe"
+                class="card-link feature-select"
+                data-mode="quick"
+            >
 
-                <div class="icon">
-                    ⏱️
+                <div class="card">
+
+                    <div class="icon">
+                        ⏱️
+                    </div>
+
+                    <h3>
+                        빠른 요리
+                    </h3>
+
+                    <p>
+                        간단하고 빠르게 만들 수 있는
+                        레시피를 추천받아 보세요.
+                    </p>
+
                 </div>
 
-                <h3>
-                    빠른 요리
-                </h3>
-
-                <p>
-                    조리 시간에 맞는 요리를
-                    추천하는 기능으로 발전시킬 예정입니다.
-                </p>
-
-            </div>
+            </a>
 
 
 
-            <!-- 개발자 블로그 -->
+            <!-- =====================
+                 개발자 블로그
+            ====================== -->
 
             <a
                 href="https://kopronty.blogspot.com/"
@@ -465,7 +542,71 @@
 
 
     <!-- =========================
-         4. RecipeAI 소개
+         레시피 추천 영역
+    ========================== -->
+
+    <section id="recipe">
+
+        <h2>
+            🍳 나만의 레시피 찾기
+        </h2>
+
+        <p class="section-description">
+            냉장고에 있는 재료를 쉼표로 구분하여 입력해 보세요.
+        </p>
+
+
+        <div class="recipe-area">
+
+
+            <!-- 현재 선택 Mode -->
+
+            <div id="selectedMode">
+
+                🤖 AI 레시피 추천 모드
+
+            </div>
+
+
+            <!-- 사용자 입력 -->
+
+            <input
+                type="text"
+                id="ingredients"
+                placeholder="예: 두부, 김치, 계란, 밥"
+                autocomplete="off"
+            >
+
+
+            <!-- 실행 버튼 -->
+
+            <button
+                type="button"
+                id="recommendButton"
+            >
+
+                🤖 레시피 추천받기
+
+            </button>
+
+
+            <!-- 추천 결과 -->
+
+            <div
+                id="result"
+                aria-live="polite"
+            >
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RecipeAI 소개
     ========================== -->
 
     <section>
@@ -478,11 +619,13 @@
         <p class="about-text">
 
             RecipeAI는 냉장고에 있는 재료를 활용하여
-            누구나 쉽고 빠르게 요리 아이디어를 얻도록 돕는
-            레시피 추천 서비스입니다.
+            누구나 쉽고 빠르게 요리 아이디어를
+            찾도록 돕는 레시피 추천 서비스입니다.
 
-            현재는 JavaScript 기반의 추천 기능을 구현하고 있으며,
-            향후 실제 생성형 AI와 연결하는 것을 목표로 합니다.
+            현재는 JavaScript 기반의 추천 기능을
+            구현하고 있으며,
+            향후 실제 생성형 AI와 연결하는 것을
+            목표로 합니다.
 
         </p>
 
@@ -491,13 +634,14 @@
 
 
     <!-- =========================
-         5. Footer
+         Footer
     ========================== -->
 
     <footer>
 
         <p>
-            © 2026 RecipeAI. All Rights Reserved.
+            © 2026 RecipeAI.
+            All Rights Reserved.
         </p>
 
     </footer>
@@ -505,32 +649,168 @@
 
 
     <!-- =========================
-         6. JavaScript
+         JavaScript 시작
     ========================== -->
 
     <script>
 
 
-        /* --------------------------------
-           HTML에서 필요한 요소 찾기
-        -------------------------------- */
+        /* =========================
+           HTML 요소 찾기
+        ========================= */
+
 
         const ingredients =
             document.getElementById("ingredients");
 
 
         const recommendButton =
-            document.getElementById("recommendButton");
+            document.getElementById(
+                "recommendButton"
+            );
 
 
         const result =
             document.getElementById("result");
 
 
+        const selectedMode =
+            document.getElementById(
+                "selectedMode"
+            );
 
-        /* --------------------------------
+
+        const featureCards =
+            document.querySelectorAll(
+                ".feature-select"
+            );
+
+
+        /*
+            현재 어떤 기능이 선택됐는지
+            저장하는 변수입니다.
+
+            normal
+            healthy
+            quick
+        */
+
+        let currentMode = "normal";
+
+
+
+        /* =========================
+           기능 카드 클릭 처리
+        ========================= */
+
+
+        featureCards.forEach(
+            function (card) {
+
+
+                card.addEventListener(
+                    "click",
+                    function () {
+
+
+                        /*
+                            클릭한 카드의
+                            data-mode 값을 가져옵니다.
+                        */
+
+                        currentMode =
+                            card.dataset.mode;
+
+
+
+                        /* 일반 추천 */
+
+                        if (
+                            currentMode === "normal"
+                        ) {
+
+                            selectedMode.textContent =
+                                "🤖 AI 레시피 추천 모드";
+
+
+                            recommendButton.textContent =
+                                "🤖 레시피 추천받기";
+
+                        }
+
+
+
+                        /* 건강한 식단 */
+
+                        else if (
+                            currentMode === "healthy"
+                        ) {
+
+                            selectedMode.textContent =
+                                "🥗 건강한 식단 모드";
+
+
+                            recommendButton.textContent =
+                                "🥗 건강 레시피 추천받기";
+
+                        }
+
+
+
+                        /* 빠른 요리 */
+
+                        else if (
+                            currentMode === "quick"
+                        ) {
+
+                            selectedMode.textContent =
+                                "⏱️ 빠른 요리 모드";
+
+
+                            recommendButton.textContent =
+                                "⏱️ 빠른 레시피 추천받기";
+
+                        }
+
+
+
+                        /*
+                            기존 추천 결과가 있었다면
+                            숨깁니다.
+                        */
+
+                        result.style.display =
+                            "none";
+
+
+                        /*
+                            페이지가 이동한 다음
+                            입력창에 커서를 놓습니다.
+                        */
+
+                        setTimeout(
+                            function () {
+
+                                ingredients.focus();
+
+                            },
+                            400
+                        );
+
+
+                    }
+                );
+
+
+            }
+        );
+
+
+
+        /* =========================
            추천 버튼 클릭
-        -------------------------------- */
+        ========================= */
+
 
         recommendButton.addEventListener(
             "click",
@@ -538,32 +818,40 @@
 
 
                 /*
-                    사용자가 입력한 값을 가져옵니다.
+                    입력값 가져오기
                 */
 
                 const userInput =
                     ingredients.value.trim();
 
 
+
                 /*
-                    아무것도 입력하지 않은 경우
+                    아무것도 입력하지 않았을 때
                 */
 
-                if (userInput === "") {
+                if (
+                    userInput === ""
+                ) {
 
-                    result.style.display = "block";
+                    result.style.display =
+                        "block";
+
 
                     result.innerHTML =
                         "<p>⚠️ 재료를 한 가지 이상 입력해 주세요.</p>";
 
+
                     ingredients.focus();
 
                     return;
+
                 }
 
 
+
                 /*
-                    입력된 재료를 검사하기 위한 문자열
+                    추천을 위한 문자열
                 */
 
                 const food =
@@ -572,7 +860,7 @@
 
 
                 /*
-                    추천 결과를 저장하는 변수
+                    추천 결과 변수
                 */
 
                 let recipeName = "";
@@ -581,9 +869,9 @@
 
 
 
-                /* --------------------------------
+                /* =========================
                    김치 + 두부
-                -------------------------------- */
+                ========================= */
 
                 if (
                     food.includes("김치") &&
@@ -595,23 +883,24 @@
 
 
                     recipeDescription =
-                        "김치를 먹기 좋은 크기로 잘라 먼저 볶아 주세요. " +
+                        "김치를 먹기 좋은 크기로 잘라 먼저 볶습니다. " +
                         "두부를 넣고 부서지지 않도록 가볍게 섞은 뒤 " +
-                        "간장과 참기름으로 마무리하면 됩니다.";
+                        "간장과 참기름으로 마무리해 보세요.";
 
                 }
 
 
 
-                /* --------------------------------
+                /* =========================
                    계란 + 밥
-                -------------------------------- */
+                ========================= */
 
                 else if (
                     (
                         food.includes("계란") ||
                         food.includes("달걀")
-                    ) &&
+                    )
+                    &&
                     food.includes("밥")
                 ) {
 
@@ -620,17 +909,17 @@
 
 
                     recipeDescription =
-                        "팬에 기름을 두르고 계란을 먼저 볶아 주세요. " +
+                        "팬에 기름을 두르고 계란을 먼저 볶습니다. " +
                         "밥을 넣고 함께 볶은 뒤 간장이나 소금으로 " +
-                        "간을 맞추면 간단한 볶음밥이 완성됩니다.";
+                        "간을 맞춰 주세요.";
 
                 }
 
 
 
-                /* --------------------------------
+                /* =========================
                    김치 + 밥
-                -------------------------------- */
+                ========================= */
 
                 else if (
                     food.includes("김치") &&
@@ -642,17 +931,17 @@
 
 
                     recipeDescription =
-                        "김치를 먼저 충분히 볶은 후 밥을 넣어 주세요. " +
-                        "간장으로 간을 하고 참기름과 김가루를 더하면 " +
-                        "간단한 김치볶음밥을 만들 수 있습니다.";
+                        "김치를 충분히 볶은 후 밥을 넣습니다. " +
+                        "간장으로 간하고 참기름과 김가루를 더하면 " +
+                        "간단한 김치볶음밥이 완성됩니다.";
 
                 }
 
 
 
-                /* --------------------------------
+                /* =========================
                    두부
-                -------------------------------- */
+                ========================= */
 
                 else if (
                     food.includes("두부")
@@ -663,17 +952,17 @@
 
 
                     recipeDescription =
-                        "두부의 물기를 제거한 뒤 먹기 좋은 크기로 자릅니다. " +
-                        "팬에서 앞뒤로 노릇하게 굽고 " +
+                        "두부의 물기를 제거하고 먹기 좋은 크기로 자릅니다. " +
+                        "팬에서 앞뒤로 노릇하게 구운 뒤 " +
                         "간장 양념장을 곁들여 보세요.";
 
                 }
 
 
 
-                /* --------------------------------
+                /* =========================
                    계란
-                -------------------------------- */
+                ========================= */
 
                 else if (
                     food.includes("계란") ||
@@ -685,17 +974,17 @@
 
 
                     recipeDescription =
-                        "계란을 풀어 소금으로 간을 합니다. " +
-                        "약한 불의 팬에 계란물을 조금씩 넣으면서 " +
+                        "계란을 풀어 소금으로 간합니다. " +
+                        "약한 불에서 계란물을 조금씩 넣으면서 " +
                         "천천히 말아 주세요.";
 
                 }
 
 
 
-                /* --------------------------------
+                /* =========================
                    감자
-                -------------------------------- */
+                ========================= */
 
                 else if (
                     food.includes("감자")
@@ -706,17 +995,17 @@
 
 
                     recipeDescription =
-                        "감자를 가늘게 썰어 물에 잠시 담갔다가 " +
-                        "팬에 볶아 주세요. 양파가 있다면 함께 넣고 " +
-                        "소금으로 간하면 간단한 반찬이 됩니다.";
+                        "감자를 가늘게 썰고 물에 잠시 담갔다가 " +
+                        "팬에서 볶아 주세요. " +
+                        "양파가 있다면 함께 넣어도 좋습니다.";
 
                 }
 
 
 
-                /* --------------------------------
-                   특별한 조합이 없는 경우
-                -------------------------------- */
+                /* =========================
+                   그 외 재료
+                ========================= */
 
                 else {
 
@@ -725,20 +1014,69 @@
 
 
                     recipeDescription =
-                        "입력한 재료를 먹기 좋은 크기로 준비하세요. " +
-                        "단단한 재료부터 팬에 볶고 " +
-                        "소금이나 간장 등 좋아하는 양념으로 " +
-                        "간을 맞춰 보세요.";
+                        "입력한 재료를 먹기 좋은 크기로 손질합니다. " +
+                        "단단한 재료부터 팬에서 볶은 뒤 " +
+                        "소금이나 간장으로 간을 맞춰 보세요.";
 
                 }
 
 
 
-                /* --------------------------------
-                   결과를 화면에 표시
-                -------------------------------- */
+                /* =========================
+                   건강식 Mode
+                ========================= */
+
+                if (
+                    currentMode === "healthy"
+                ) {
+
+                    recipeName =
+                        "🥗 건강식 추천: " +
+                        recipeName;
+
+
+                    recipeDescription =
+                        recipeDescription +
+
+                        " 건강식으로 드시려면 " +
+                        "기름과 나트륨 사용량을 줄이고 " +
+                        "채소를 충분히 곁들이는 것을 추천합니다.";
+
+                }
+
+
+
+                /* =========================
+                   빠른 요리 Mode
+                ========================= */
+
+                else if (
+                    currentMode === "quick"
+                ) {
+
+                    recipeName =
+                        "⏱️ 빠른 요리: " +
+                        recipeName;
+
+
+                    recipeDescription =
+                        recipeDescription +
+
+                        " 조리 시간을 줄이려면 " +
+                        "재료를 작게 썰고 " +
+                        "한 개의 팬을 사용하는 것을 추천합니다.";
+
+                }
+
+
+
+                /* =========================
+                   결과 표시
+                ========================= */
+
 
                 result.innerHTML =
+
                     "<h3>" +
                     recipeName +
                     "</h3>" +
@@ -760,50 +1098,77 @@
                     "<br>" +
 
                     "<p style='font-size:14px; color:#777;'>" +
-                    "※ 현재 추천은 JavaScript 규칙 기반 기능입니다. " +
+
+                    "※ 현재는 JavaScript 규칙 기반 추천입니다. " +
                     "다음 단계에서 실제 생성형 AI와 연결할 예정입니다." +
+
                     "</p>";
 
 
-                result.style.display = "block";
+
+                result.style.display =
+                    "block";
+
+
+
+                /*
+                    추천 결과 위치로 이동
+                */
+
+                result.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "nearest"
+
+                });
+
 
             }
         );
 
 
 
-        /* --------------------------------
-           Enter 키로도 실행
-        -------------------------------- */
+        /* =========================
+           Enter 키 실행
+        ========================= */
 
         ingredients.addEventListener(
             "keydown",
             function (event) {
 
-                if (event.key === "Enter") {
+
+                if (
+                    event.key === "Enter"
+                ) {
 
                     recommendButton.click();
 
                 }
+
 
             }
         );
 
 
 
-        /* --------------------------------
-           사용자가 입력한 문자를
-           화면에 안전하게 표시하기 위한 함수
-        -------------------------------- */
+        /* =========================
+           입력값 안전 표시
+        ========================= */
 
         function escapeHtml(text) {
+
 
             const div =
                 document.createElement("div");
 
-            div.textContent = text;
+
+            div.textContent =
+                text;
+
 
             return div.innerHTML;
+
 
         }
 
