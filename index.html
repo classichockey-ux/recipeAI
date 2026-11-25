@@ -3,39 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="theme-color"
-        content="#ff6b57"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff6b57">
+    <meta name="description" content="냉장고 재료로 오늘의 레시피를 찾고, 중년 이후 1~2인 가구를 위한 4주 건강 식단을 만드는 RecipeAI">
     <title>RecipeAI - 중년 이후 건강 집밥</title>
 
     <style>
         /* ========================================
            1. 전체 기본 설정
         ======================================== */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family:
-                "Segoe UI",
-                "Apple SD Gothic Neo",
-                "Noto Sans KR",
-                Arial,
-                sans-serif;
+            font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background: #f7f8fa;
@@ -43,48 +27,27 @@
             line-height: 1.7;
         }
 
-        button,
-        input,
-        select,
-        textarea {
-            font: inherit;
-        }
+        button, input, select, textarea { font: inherit; }
 
-        button,
-        .card-link {
-            -webkit-tap-highlight-color: transparent;
-        }
+        button, .card-link { -webkit-tap-highlight-color: transparent; }
 
-        button:focus-visible,
-        input:focus-visible,
-        select:focus-visible,
-        textarea:focus-visible,
-        a:focus-visible {
+        button:focus-visible, input:focus-visible, select:focus-visible,
+        textarea:focus-visible, a:focus-visible {
             outline: 3px solid rgba(255, 107, 87, 0.35);
             outline-offset: 3px;
         }
 
-
         /* ========================================
            2. 상단 Header
         ======================================== */
-
         header {
             padding: 85px 20px;
             color: white;
             text-align: center;
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff9a3d,
-                    #ff5e62
-                );
+            background: linear-gradient(135deg, #ff9a3d, #ff5e62);
         }
 
-        header h1 {
-            margin-bottom: 12px;
-            font-size: 3.1rem;
-        }
+        header h1 { margin-bottom: 12px; font-size: 3.1rem; }
 
         header p {
             max-width: 700px;
@@ -110,11 +73,9 @@
             box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
         }
 
-
         /* ========================================
            3. 공통 영역
         ======================================== */
-
         section {
             max-width: 1180px;
             margin: 0 auto;
@@ -135,19 +96,14 @@
             text-align: center;
         }
 
-        .hidden {
-            display: none !important;
-        }
-
+        .hidden { display: none !important; }
 
         /* ========================================
            4. 주요 기능 카드
         ======================================== */
-
         .features {
             display: grid;
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 22px;
         }
 
@@ -180,25 +136,13 @@
             background: #fff9f5;
         }
 
-        .feature-icon {
-            margin-bottom: 18px;
-            font-size: 50px;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-        }
-
-        .feature-card p {
-            color: #555;
-        }
-
+        .feature-icon { margin-bottom: 18px; font-size: 50px; }
+        .feature-card h3 { margin-bottom: 10px; font-size: 1.25rem; }
+        .feature-card p { color: #555; }
 
         /* ========================================
            5. 기능 공통 패널
         ======================================== */
-
         .app-panel {
             padding: 35px;
             border-radius: 18px;
@@ -217,31 +161,32 @@
             text-align: center;
         }
 
+        .dictionary-badge {
+            margin-bottom: 20px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: #23613e;
+            background: #e9f7ee;
+            font-size: 0.92rem;
+            text-align: center;
+        }
+
         .form-grid {
             display: grid;
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 18px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        .form-group { margin-bottom: 20px; }
+        .form-group.full { grid-column: 1 / -1; }
 
-        .form-group.full {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label,
-        .group-label {
+        .form-group label, .group-label {
             display: block;
             margin-bottom: 8px;
             font-weight: 700;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 13px 14px;
             border: 1px solid #d5d9df;
@@ -250,22 +195,20 @@
             font-size: 1rem;
         }
 
-        .form-group textarea {
-            min-height: 105px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             border-color: #ff6b57;
             outline: 3px solid rgba(255, 107, 87, 0.12);
         }
 
+        .input-help {
+            margin-top: 6px;
+            color: #777;
+            font-size: 0.88rem;
+        }
+
         .checkbox-grid {
             display: grid;
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 10px;
         }
 
@@ -292,9 +235,7 @@
             margin-top: 10px;
         }
 
-        .primary-button,
-        .secondary-button,
-        .danger-button {
+        .primary-button, .secondary-button, .danger-button {
             padding: 13px 20px;
             border: none;
             border-radius: 9px;
@@ -307,27 +248,13 @@
             flex: 1;
             min-width: 210px;
             color: white;
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff8a00,
-                    #ff5e62
-                );
+            background: linear-gradient(135deg, #ff8a00, #ff5e62);
         }
 
-        .secondary-button {
-            color: #333;
-            background: #edf0f4;
-        }
+        .secondary-button { color: #333; background: #edf0f4; }
+        .danger-button { color: #a82828; background: #ffe9e9; }
 
-        .danger-button {
-            color: #a82828;
-            background: #ffe9e9;
-        }
-
-        .primary-button:hover,
-        .secondary-button:hover,
-        .danger-button:hover {
+        .primary-button:hover, .secondary-button:hover, .danger-button:hover {
             transform: translateY(-2px);
             filter: brightness(0.97);
         }
@@ -340,30 +267,58 @@
             text-align: center;
         }
 
-        .message.show {
-            display: block;
-        }
-
-        .message.info {
-            color: #294e76;
-            background: #eaf4ff;
-        }
-
-        .message.error {
-            color: #962626;
-            background: #ffe7e7;
-        }
-
-        .message.success {
-            color: #23613e;
-            background: #e5f7eb;
-        }
-
+        .message.show { display: block; }
+        .message.info { color: #294e76; background: #eaf4ff; }
+        .message.error { color: #962626; background: #ffe7e7; }
+        .message.success { color: #23613e; background: #e5f7eb; }
 
         /* ========================================
-           6. 오늘의 레시피
+           6. 재료 표준화 결과
         ======================================== */
+        .normalized-box {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border: 1px solid #e6e8ec;
+            border-radius: 12px;
+            background: #fbfbfc;
+        }
 
+        .normalized-box.show { display: block; }
+        .normalized-box h4 { margin-bottom: 10px; }
+
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .food-chip {
+            display: inline-flex;
+            flex-direction: column;
+            padding: 8px 12px;
+            border: 1px solid #cfe8d7;
+            border-radius: 12px;
+            background: #effaf3;
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+
+        .food-chip small { color: #5d6b62; }
+
+        .food-chip.warn {
+            border-color: #f2d78b;
+            background: #fff9df;
+        }
+
+        .food-chip.unknown {
+            border-color: #ffc9c9;
+            background: #fff1f1;
+        }
+
+        /* ========================================
+           7. 오늘의 레시피
+        ======================================== */
         .recipe-result {
             display: none;
             margin-top: 25px;
@@ -373,29 +328,14 @@
             background: #fff8f3;
         }
 
-        .recipe-result.show {
-            display: block;
-        }
-
-        .recipe-result h3 {
-            margin-bottom: 14px;
-            color: #e65343;
-        }
-
-        .recipe-result ul,
-        .recipe-result ol {
-            padding-left: 23px;
-        }
-
-        .recipe-result li {
-            margin-bottom: 7px;
-        }
-
+        .recipe-result.show { display: block; }
+        .recipe-result h3 { margin-bottom: 14px; color: #e65343; }
+        .recipe-result ul, .recipe-result ol { padding-left: 23px; }
+        .recipe-result li { margin-bottom: 7px; }
 
         /* ========================================
-           7. 냉장고 재료
+           8. 냉장고 재료
         ======================================== */
-
         .inventory-box {
             margin-top: 25px;
             padding: 22px;
@@ -404,9 +344,7 @@
             background: #fbfbfc;
         }
 
-        .inventory-box h3 {
-            margin-bottom: 13px;
-        }
+        .inventory-box h3 { margin-bottom: 13px; }
 
         .ingredient-tags {
             display: flex;
@@ -434,23 +372,13 @@
             cursor: pointer;
         }
 
-        .empty-note {
-            color: #777;
-        }
-
+        .empty-note { color: #777; }
 
         /* ========================================
-           8. 한 달 식단 결과
+           9. 한 달 식단 결과
         ======================================== */
-
-        #mealPlanResult {
-            display: none;
-            margin-top: 35px;
-        }
-
-        #mealPlanResult.show {
-            display: block;
-        }
+        #mealPlanResult { display: none; margin-top: 35px; }
+        #mealPlanResult.show { display: block; }
 
         .plan-summary {
             margin-bottom: 20px;
@@ -459,14 +387,11 @@
             background: #eef7f0;
         }
 
-        .plan-summary strong {
-            color: #28613c;
-        }
+        .plan-summary strong { color: #28613c; }
 
         .week-tabs {
             display: grid;
-            grid-template-columns:
-                repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 8px;
             margin: 20px 0;
         }
@@ -489,8 +414,7 @@
 
         .meal-grid {
             display: grid;
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 15px;
         }
 
@@ -501,28 +425,10 @@
             background: white;
         }
 
-        .meal-card .day {
-            margin-bottom: 7px;
-            color: #ff5e62;
-            font-weight: 800;
-        }
-
-        .meal-card h4 {
-            margin-bottom: 8px;
-            font-size: 1.08rem;
-        }
-
-        .meal-meta {
-            margin-top: 9px;
-            color: #666;
-            font-size: 0.92rem;
-        }
-
-        .meal-note {
-            margin-top: 9px;
-            color: #3e654a;
-            font-size: 0.92rem;
-        }
+        .meal-card .day { margin-bottom: 7px; color: #ff5e62; font-weight: 800; }
+        .meal-card h4 { margin-bottom: 8px; font-size: 1.08rem; }
+        .meal-meta { margin-top: 9px; color: #666; font-size: 0.92rem; }
+        .meal-note { margin-top: 9px; color: #3e654a; font-size: 0.92rem; }
 
         .shopping-box {
             margin-top: 24px;
@@ -531,14 +437,11 @@
             background: #f3f6f8;
         }
 
-        .shopping-box h3 {
-            margin-bottom: 13px;
-        }
+        .shopping-box h3 { margin-bottom: 13px; }
 
         .shopping-list {
             display: grid;
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 9px;
             padding-left: 20px;
         }
@@ -553,11 +456,9 @@
             font-size: 0.94rem;
         }
 
-
         /* ========================================
-           9. 소개 및 Footer
+           10. 소개 및 Footer
         ======================================== */
-
         .about-text {
             max-width: 850px;
             margin: 0 auto;
@@ -572,73 +473,31 @@
             text-align: center;
         }
 
-
         /* ========================================
-           10. 모바일 화면
+           11. 모바일 화면
         ======================================== */
-
         @media (max-width: 900px) {
-            .features {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-            .shopping-list {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
+            .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .shopping-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (max-width: 640px) {
-            header {
-                padding: 60px 18px;
-            }
+            header { padding: 60px 18px; }
+            header h1 { font-size: 2.25rem; }
+            section { padding: 50px 16px; }
+            .section-title { font-size: 1.65rem; }
 
-            header h1 {
-                font-size: 2.25rem;
-            }
-
-            section {
-                padding: 50px 16px;
-            }
-
-            .section-title {
-                font-size: 1.65rem;
-            }
-
-            .features,
-            .form-grid,
-            .meal-grid,
-            .shopping-list {
+            .features, .form-grid, .meal-grid, .shopping-list {
                 grid-template-columns: 1fr;
             }
 
-            .feature-card {
-                min-height: 220px;
-            }
+            .feature-card { min-height: 220px; }
+            .app-panel { padding: 24px 18px; }
+            .checkbox-grid { grid-template-columns: 1fr; }
+            .week-tabs { grid-template-columns: repeat(2, 1fr); }
+            .button-row { flex-direction: column; }
 
-            .app-panel {
-                padding: 24px 18px;
-            }
-
-            .checkbox-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .week-tabs {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .button-row {
-                flex-direction: column;
-            }
-
-            .primary-button,
-            .secondary-button,
-            .danger-button {
-                width: 100%;
-            }
+            .primary-button, .secondary-button, .danger-button { width: 100%; }
         }
     </style>
 </head>
@@ -649,120 +508,55 @@
     <!-- ========================================
          상단
     ======================================== -->
-
     <header>
         <h1>🍳 RecipeAI</h1>
-
         <p>
             냉장고 재료로 오늘의 요리를 찾고,
             중년 이후를 위한 간단한 한 달 건강 식단을 계획해 보세요.
         </p>
-
-        <a
-            href="#features"
-            class="main-button"
-        >
-            지금 시작하기
-        </a>
+        <a href="#features" class="main-button">지금 시작하기</a>
     </header>
 
 
     <!-- ========================================
          주요 기능
     ======================================== -->
-
     <section id="features">
-        <h2 class="section-title">
-            RecipeAI 주요 기능
-        </h2>
-
-        <p class="section-description">
-            원하는 기능을 선택하면 해당 입력 화면으로 이동합니다.
-        </p>
+        <h2 class="section-title">RecipeAI 주요 기능</h2>
+        <p class="section-description">원하는 기능을 선택하면 해당 입력 화면으로 이동합니다.</p>
 
         <div class="features">
-
-            <a
-                href="#todayRecipe"
-                class="card-link feature-menu"
-                data-feature="today"
-            >
-                <div
-                    class="feature-card"
-                    id="todayCard"
-                >
+            <a href="#todayRecipe" class="card-link feature-menu" data-feature="today">
+                <div class="feature-card" id="todayCard">
                     <div class="feature-icon">🤖</div>
-
                     <h3>오늘의 레시피</h3>
-
-                    <p>
-                        냉장고 속 재료를 입력하고
-                        오늘 한 끼 레시피를 추천받습니다.
-                    </p>
+                    <p>냉장고 속 재료를 입력하고 오늘 한 끼 레시피를 추천받습니다.</p>
                 </div>
             </a>
 
-
-            <a
-                href="#monthlyPlan"
-                class="card-link feature-menu"
-                data-feature="monthly"
-            >
-                <div
-                    class="feature-card"
-                    id="monthlyCard"
-                >
+            <a href="#monthlyPlan" class="card-link feature-menu" data-feature="monthly">
+                <div class="feature-card" id="monthlyCard">
                     <div class="feature-icon">📅</div>
-
                     <h3>한 달 건강 식단</h3>
-
-                    <p>
-                        중년과 은퇴 이후 1~2인 가구를 위한
-                        4주 저녁 식단을 만듭니다.
-                    </p>
+                    <p>중년과 은퇴 이후 1~2인 가구를 위한 4주 저녁 식단을 만듭니다.</p>
                 </div>
             </a>
 
-
-            <a
-                href="#todayRecipe"
-                class="card-link feature-menu"
-                data-feature="quick"
-            >
-                <div
-                    class="feature-card"
-                    id="quickCard"
-                >
+            <a href="#todayRecipe" class="card-link feature-menu" data-feature="quick">
+                <div class="feature-card" id="quickCard">
                     <div class="feature-icon">⏱️</div>
-
                     <h3>빠른 요리</h3>
-
-                    <p>
-                        냉장고 재료로 20분 이내에 만들 수 있는
-                        간단한 요리를 추천합니다.
-                    </p>
+                    <p>냉장고 재료로 20분 이내에 만들 수 있는 간단한 요리를 추천합니다.</p>
                 </div>
             </a>
 
-
-            <a
-                href="https://kopronty.blogspot.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="card-link"
-            >
+            <a href="https://kopronty.blogspot.com/" target="_blank" rel="noopener noreferrer" class="card-link">
                 <div class="feature-card">
                     <div class="feature-icon">✍️</div>
-
                     <h3>개발자 블로그</h3>
-
-                    <p>
-                        AI, 재테크, 철학 그리고
-                        바이브 코딩의 학습과 생각을 기록합니다.
-                    </p>
+                    <p>AI, 재테크, 철학 그리고 바이브 코딩의 학습과 생각을 기록합니다.</p>
                 </div>
             </a>
-
         </div>
     </section>
 
@@ -770,42 +564,26 @@
     <!-- ========================================
          오늘의 레시피
     ======================================== -->
-
     <section id="todayRecipe">
-        <h2 class="section-title">
-            🤖 오늘의 레시피
-        </h2>
-
+        <h2 class="section-title">🤖 오늘의 레시피</h2>
         <p class="section-description">
             냉장고 재료를 쉼표로 구분해 입력하세요.
+            "달걀 3알, 냉동 삼겹살 300그램, 고추가루"처럼 입력해도 자동으로 정리합니다.
         </p>
 
         <div class="app-panel">
-            <div
-                id="recipeMode"
-                class="mode-badge"
-            >
-                🤖 일반 레시피 추천 모드
+            <div id="recipeMode" class="mode-badge">🤖 일반 레시피 추천 모드</div>
+            <div id="dictionaryStatus" class="dictionary-badge"></div>
+
+            <div class="form-group">
+                <label for="todayIngredients">냉장고에 있는 재료</label>
+                <input type="text" id="todayIngredients"
+                    placeholder="예: 두부 1모, 달걀 3알, 신김치 조금, 애호박" autocomplete="off">
+                <p class="input-help">동의어(달걀→계란), 오타(고추가루→고춧가루), 수량·단위, 냉동·다진 상태를 인식합니다.</p>
             </div>
 
             <div class="form-group">
-                <label for="todayIngredients">
-                    냉장고에 있는 재료
-                </label>
-
-                <input
-                    type="text"
-                    id="todayIngredients"
-                    placeholder="예: 두부, 계란, 김치, 애호박"
-                    autocomplete="off"
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="todayTime">
-                    원하는 조리시간
-                </label>
-
+                <label for="todayTime">원하는 조리시간</label>
                 <select id="todayTime">
                     <option value="15">15분 이내</option>
                     <option value="20" selected>20분 이내</option>
@@ -813,25 +591,18 @@
                 </select>
             </div>
 
-            <button
-                type="button"
-                id="todayRecommendButton"
-                class="primary-button"
-            >
+            <button type="button" id="todayRecommendButton" class="primary-button">
                 🤖 오늘의 레시피 추천받기
             </button>
 
-            <div
-                id="todayMessage"
-                class="message"
-                role="alert"
-            ></div>
+            <div id="todayMessage" class="message" role="alert"></div>
 
-            <div
-                id="todayResult"
-                class="recipe-result"
-                aria-live="polite"
-            ></div>
+            <div id="normalizedBox" class="normalized-box" aria-live="polite">
+                <h4>🧾 이렇게 이해했어요</h4>
+                <div id="normalizedChips" class="chip-list"></div>
+            </div>
+
+            <div id="todayResult" class="recipe-result" aria-live="polite"></div>
         </div>
     </section>
 
@@ -839,319 +610,115 @@
     <!-- ========================================
          한 달 건강 식단
     ======================================== -->
-
     <section id="monthlyPlan">
-        <h2 class="section-title">
-            📅 중년 이후 한 달 건강 식단
-        </h2>
-
-        <p class="section-description">
-            최소한의 반찬과 반복 장보기를 줄이는 구성으로
-            4주 저녁 식단을 만듭니다.
-        </p>
+        <h2 class="section-title">📅 중년 이후 한 달 건강 식단</h2>
+        <p class="section-description">최소한의 반찬과 반복 장보기를 줄이는 구성으로 4주 저녁 식단을 만듭니다.</p>
 
         <div class="app-panel">
-
-            <div class="mode-badge">
-                밥 + 단백질 반찬 1개 + 채소 반찬 1개를 기본으로 구성합니다.
-            </div>
+            <div class="mode-badge">밥 + 단백질 반찬 1개 + 채소 반찬 1개를 기본으로 구성합니다.</div>
 
             <div class="form-grid">
-
                 <div class="form-group">
-                    <label for="ageGroup">
-                        연령대
-                    </label>
-
+                    <label for="ageGroup">연령대</label>
                     <select id="ageGroup">
-                        <option value="50-64">
-                            50~64세
-                        </option>
-
-                        <option value="65-74">
-                            65~74세
-                        </option>
-
-                        <option value="75+">
-                            75세 이상
-                        </option>
+                        <option value="50-64">50~64세</option>
+                        <option value="65-74">65~74세</option>
+                        <option value="75+">75세 이상</option>
                     </select>
                 </div>
 
-
                 <div class="form-group">
-                    <label for="peopleCount">
-                        식사 인원
-                    </label>
-
+                    <label for="peopleCount">식사 인원</label>
                     <select id="peopleCount">
-                        <option value="1">
-                            1명
-                        </option>
-
-                        <option value="2" selected>
-                            2명
-                        </option>
+                        <option value="1">1명</option>
+                        <option value="2" selected>2명</option>
                     </select>
                 </div>
 
-
                 <div class="form-group">
-                    <label for="cookingTime">
-                        한 끼 조리시간
-                    </label>
-
+                    <label for="cookingTime">한 끼 조리시간</label>
                     <select id="cookingTime">
-                        <option value="15">
-                            15분 이내
-                        </option>
-
-                        <option value="30" selected>
-                            30분 이내
-                        </option>
-
-                        <option value="any">
-                            시간 제한 없음
-                        </option>
+                        <option value="15">15분 이내</option>
+                        <option value="30" selected>30분 이내</option>
+                        <option value="any">시간 제한 없음</option>
                     </select>
                 </div>
-
 
                 <div class="form-group">
-                    <label for="planMethod">
-                        식단 생성 방식
-                    </label>
-
+                    <label for="planMethod">식단 생성 방식</label>
                     <select id="planMethod">
-                        <option value="inventory">
-                            냉장고 재료 우선
-                        </option>
-
-                        <option value="standard">
-                            일반 한국 가정식 추천
-                        </option>
+                        <option value="inventory">냉장고 재료 우선</option>
+                        <option value="standard">일반 한국 가정식 추천</option>
                     </select>
                 </div>
-
 
                 <div class="form-group full">
-                    <span class="group-label">
-                        식단 고려사항
-                    </span>
-
+                    <span class="group-label">식단 고려사항</span>
                     <div class="checkbox-grid">
-                        <label class="check-option">
-                            <input
-                                type="checkbox"
-                                id="lowSalt"
-                                checked
-                            >
-                            싱겁게 먹기
-                        </label>
-
-                        <label class="check-option">
-                            <input
-                                type="checkbox"
-                                id="softFood"
-                            >
-                            부드러운 음식
-                        </label>
-
-                        <label class="check-option">
-                            <input
-                                type="checkbox"
-                                id="weightCare"
-                            >
-                            체중 관리
-                        </label>
-
-                        <label class="check-option">
-                            <input
-                                type="checkbox"
-                                id="avoidSoup"
-                                checked
-                            >
-                            국·찌개 줄이기
-                        </label>
+                        <label class="check-option"><input type="checkbox" id="lowSalt" checked> 싱겁게 먹기</label>
+                        <label class="check-option"><input type="checkbox" id="softFood"> 부드러운 음식</label>
+                        <label class="check-option"><input type="checkbox" id="weightCare"> 체중 관리</label>
+                        <label class="check-option"><input type="checkbox" id="avoidSoup" checked> 국·찌개 줄이기</label>
                     </div>
                 </div>
 
-
                 <div class="form-group full">
-                    <label for="excludedFoods">
-                        제외할 재료
-                    </label>
-
-                    <input
-                        type="text"
-                        id="excludedFoods"
-                        placeholder="예: 땅콩, 버섯, 고등어"
-                    >
+                    <label for="excludedFoods">제외할 재료</label>
+                    <input type="text" id="excludedFoods" placeholder="예: 땅콩, 버섯, 고등어">
                 </div>
-
             </div>
 
-
             <!-- 냉장고 재료 입력 -->
-
             <div class="inventory-box">
-                <h3>
-                    🧊 나의 냉장고
-                </h3>
+                <h3>🧊 나의 냉장고</h3>
 
                 <div class="form-grid">
-
                     <div class="form-group">
-                        <label for="newIngredient">
-                            재료명
-                        </label>
-
-                        <input
-                            type="text"
-                            id="newIngredient"
-                            placeholder="예: 두부"
-                        >
+                        <label for="newIngredient">재료명</label>
+                        <input type="text" id="newIngredient" placeholder="예: 달걀 6알, 냉동 고등어">
                     </div>
 
                     <div class="form-group">
-                        <label for="ingredientAmount">
-                            수량 또는 메모
-                        </label>
-
-                        <input
-                            type="text"
-                            id="ingredientAmount"
-                            placeholder="예: 1모, 4개"
-                        >
+                        <label for="ingredientAmount">수량 또는 메모</label>
+                        <input type="text" id="ingredientAmount" placeholder="예: 1모, 4개 (비우면 재료명에서 자동 추출)">
                     </div>
-
                 </div>
 
                 <div class="button-row">
-                    <button
-                        type="button"
-                        id="addIngredientButton"
-                        class="secondary-button"
-                    >
-                        재료 추가
-                    </button>
-
-                    <button
-                        type="button"
-                        id="sampleIngredientsButton"
-                        class="secondary-button"
-                    >
-                        예시 재료 넣기
-                    </button>
-
-                    <button
-                        type="button"
-                        id="clearIngredientsButton"
-                        class="danger-button"
-                    >
-                        냉장고 비우기
-                    </button>
+                    <button type="button" id="addIngredientButton" class="secondary-button">재료 추가</button>
+                    <button type="button" id="sampleIngredientsButton" class="secondary-button">예시 재료 넣기</button>
+                    <button type="button" id="clearIngredientsButton" class="danger-button">냉장고 비우기</button>
                 </div>
 
-                <div
-                    id="ingredientTags"
-                    class="ingredient-tags"
-                    aria-live="polite"
-                    style="margin-top: 18px;"
-                ></div>
+                <div id="inventoryMessage" class="message" role="alert"></div>
+
+                <div id="ingredientTags" class="ingredient-tags" aria-live="polite" style="margin-top: 18px;"></div>
             </div>
 
-
-            <div
-                id="planMessage"
-                class="message"
-                role="alert"
-            ></div>
-
+            <div id="planMessage" class="message" role="alert"></div>
 
             <div class="button-row">
-                <button
-                    type="button"
-                    id="generatePlanButton"
-                    class="primary-button"
-                >
-                    📅 4주 건강 식단 만들기
-                </button>
-
-                <button
-                    type="button"
-                    id="loadPlanButton"
-                    class="secondary-button"
-                >
-                    저장된 식단 불러오기
-                </button>
-
-                <button
-                    type="button"
-                    id="deletePlanButton"
-                    class="danger-button"
-                >
-                    저장된 식단 삭제
-                </button>
+                <button type="button" id="generatePlanButton" class="primary-button">📅 4주 건강 식단 만들기</button>
+                <button type="button" id="loadPlanButton" class="secondary-button">저장된 식단 불러오기</button>
+                <button type="button" id="deletePlanButton" class="danger-button">저장된 식단 삭제</button>
             </div>
 
-
             <!-- 생성된 식단 -->
-
-            <div
-                id="mealPlanResult"
-                aria-live="polite"
-            >
-                <div
-                    id="planSummary"
-                    class="plan-summary"
-                ></div>
+            <div id="mealPlanResult" aria-live="polite">
+                <div id="planSummary" class="plan-summary"></div>
 
                 <div class="week-tabs">
-                    <button
-                        type="button"
-                        class="week-tab active"
-                        data-week="0"
-                    >
-                        1주차
-                    </button>
-
-                    <button
-                        type="button"
-                        class="week-tab"
-                        data-week="1"
-                    >
-                        2주차
-                    </button>
-
-                    <button
-                        type="button"
-                        class="week-tab"
-                        data-week="2"
-                    >
-                        3주차
-                    </button>
-
-                    <button
-                        type="button"
-                        class="week-tab"
-                        data-week="3"
-                    >
-                        4주차
-                    </button>
+                    <button type="button" class="week-tab active" data-week="0">1주차</button>
+                    <button type="button" class="week-tab" data-week="1">2주차</button>
+                    <button type="button" class="week-tab" data-week="2">3주차</button>
+                    <button type="button" class="week-tab" data-week="3">4주차</button>
                 </div>
 
                 <div id="mealGrid" class="meal-grid"></div>
 
                 <div class="shopping-box">
-                    <h3 id="shoppingTitle">
-                        🛒 1주차 장보기 목록
-                    </h3>
-
-                    <ul
-                        id="shoppingList"
-                        class="shopping-list"
-                    ></ul>
+                    <h3 id="shoppingTitle">🛒 1주차 장보기 목록</h3>
+                    <ul id="shoppingList" class="shopping-list"></ul>
                 </div>
 
                 <div class="notice-box">
@@ -1162,7 +729,6 @@
                     담당 의사나 임상영양사와 상의하세요.
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -1170,39 +736,433 @@
     <!-- ========================================
          서비스 소개
     ======================================== -->
-
     <section>
-        <h2 class="section-title">
-            왜 RecipeAI인가?
-        </h2>
-
+        <h2 class="section-title">왜 RecipeAI인가?</h2>
         <p class="about-text">
             RecipeAI는 냉장고에 남아 있는 재료를 먼저 사용하고,
             중년과 은퇴 이후 1~2인 가구가 부담 없이 준비할 수 있는
             한국 가정식 중심의 식단을 제안합니다.
-            현재 버전은 규칙 기반 MVP이며,
-            향후 영양 데이터와 생성형 AI를 안전한 Backend를 통해
-            연결하는 것을 목표로 합니다.
+            약 500개 표준 식재료 사전과 규칙 기반 Ingredient Normalizer로
+            "달걀"과 "계란", "고추가루"와 "고춧가루"처럼 다른 표현을 같은 재료로 이해합니다.
+            향후 영양 데이터와 생성형 AI를 안전한 Backend를 통해 연결하는 것을 목표로 합니다.
         </p>
     </section>
 
-
     <footer>
-        <p>
-            © 2026 RecipeAI. All Rights Reserved.
-        </p>
+        <p>© 2026 RecipeAI. All Rights Reserved.</p>
     </footer>
 
 
     <!-- ========================================
-         JavaScript
+         JavaScript 1: Ingredient Normalizer
+         (화면과 무관한 순수 로직)
     ======================================== -->
+    <script id="normalizer-script">
+        const IngredientNormalizer = (function () {
 
+            /* ---------- 1. 표준 식재료 사전 ---------- */
+            const CATEGORY_DATA = {
+                "채소": "감자,고구마,양파,적양파,대파,쪽파,실파,마늘,생강,무,총각무,열무,당근,애호박,주키니호박,단호박,늙은호박,오이,가지,토마토,방울토마토,파프리카,청피망,홍피망,풋고추,청양고추,홍고추,꽈리고추,배추,얼갈이배추,양배추,적양배추,상추,깻잎,시금치,근대,아욱,부추,미나리,쑥갓,청경채,케일,루콜라,양상추,로메인,브로콜리,콜리플라워,셀러리,아스파라거스,연근,우엉,도라지,더덕,죽순,토란,비트,콜라비,옥수수,완두콩,그린빈,숙주,콩나물,고사리,취나물,곤드레,냉이,달래,씀바귀,두릅,머위,방풍나물,참나물,고구마줄기,토란대,무청,우거지,시래기",
+                "버섯": "표고버섯,새송이버섯,느타리버섯,팽이버섯,양송이버섯,목이버섯,만가닥버섯,백만송이버섯,포르치니버섯,트러플,송이버섯,능이버섯",
+                "과일": "사과,배,바나나,딸기,블루베리,라즈베리,체리,포도,청포도,복숭아,자두,살구,감,곶감,귤,오렌지,레몬,라임,자몽,유자,수박,참외,멜론,키위,파인애플,망고,아보카도,석류,무화과,대추,건포도,코코넛,패션프루트,용과,파파야",
+                "육류": "소고기,소고기등심,소고기안심,소고기채끝,소고기우둔살,소고기설도,소고기양지,소고기사태,소갈비,차돌박이,우삼겹,다진소고기,돼지고기,삼겹살,목살,앞다리살,뒷다리살,돼지등심,돼지안심,돼지갈비,돼지등갈비,항정살,가브리살,다진돼지고기,닭고기,닭가슴살,닭다리살,닭날개,닭봉,닭안심,통닭,오리고기,오리훈제,양고기,양갈비,베이컨,햄,소시지,초리조,살라미,프로슈토,런천미트,족발,보쌈고기,곱창,대창,막창,소간,닭간",
+                "수산물": "고등어,삼치,갈치,꽁치,조기,명태,동태,황태,북어,대구,연어,참치,광어,우럭,도미,농어,장어,아귀,가자미,임연수,병어,숭어,멸치,디포리,뱅어포,오징어,한치,갑오징어,문어,낙지,주꾸미,새우,대하,꽃게,대게,킹크랩,랍스터,바지락,모시조개,홍합,굴,전복,가리비,꼬막,골뱅이,소라,멍게",
+                "해조류": "김,미역,다시마,파래,매생이,톳,미역줄기,한천",
+                "계란·유제품": "계란,메추리알,오리알,우유,저지방우유,무지방우유,두유,연유,생크림,휘핑크림,사워크림,요거트,그릭요거트,버터,무염버터,가염버터,마가린,모차렐라치즈,체다치즈,파르메산치즈,고다치즈,에멘탈치즈,리코타치즈,크림치즈,페타치즈,브리치즈,슬라이스치즈,스트링치즈,치즈",
+                "곡물·면": "밥,쌀,백미,현미,찹쌀,흑미,잡곡,보리,귀리,퀴노아,기장,수수,율무,밀가루,강력분,중력분,박력분,통밀가루,쌀가루,찹쌀가루,옥수수가루,전분,감자전분,옥수수전분,고구마전분,빵가루,오트밀,식빵,바게트,또띠아,베이글,모닝빵,크루아상,떡국떡,떡볶이떡,가래떡,쌀국수,소면,중면,우동면,칼국수면,냉면,당면,라면,메밀면,파스타면,스파게티면,펜네,푸실리,라자냐면,쿠스쿠스,누룽지,국수",
+                "콩·두부·견과": "대두,검은콩,서리태,팥,녹두,강낭콩,병아리콩,렌틸콩,완두,두부,연두부,순두부,유부,콩비지,낫토,템페,땅콩,아몬드,호두,잣,캐슈너트,피스타치오,헤이즐넛,마카다미아,피칸,해바라기씨,호박씨,참깨,검은깨,들깨",
+                "양념·소스": "소금,천일염,맛소금,설탕,흑설탕,황설탕,올리고당,물엿,꿀,메이플시럽,간장,진간장,양조간장,국간장,조선간장,굴소스,액젓,멸치액젓,까나리액젓,참치액,피시소스,된장,쌈장,고추장,초고추장,춘장,두반장,해선장,미소된장,청국장,식초,현미식초,사과식초,발사믹식초,레드와인식초,화이트와인식초,레몬즙,라임즙,케첩,마요네즈,머스터드,홀그레인머스터드,돈가스소스,우스터소스,스테이크소스,바비큐소스,칠리소스,스위트칠리소스,핫소스,타바스코,토마토소스,토마토페이스트,페스토,카레가루,하이라이스가루,짜장가루,참기름,들기름,식용유,올리브유,포도씨유,카놀라유,아보카도오일,코코넛오일,라드",
+                "향신료·허브": "고춧가루,후추,통후추,백후추,산초,제피,겨자분,고추냉이,와사비,계피,시나몬스틱,정향,팔각,육두구,큐민,코리앤더씨,강황,파프리카가루,카이엔페퍼,칠리플레이크,오레가노,바질,파슬리,로즈마리,타임,딜,민트,고수,월계수잎,세이지,타라곤,레몬그라스,바닐라빈,바닐라익스트랙,카카오가루,말차가루",
+                "가공식품": "김치,배추김치,깍두기,총각김치,열무김치,파김치,백김치,동치미,묵은지,단무지,피클,올리브,케이퍼,참치캔,고등어통조림,꽁치통조림,골뱅이통조림,토마토통조림,옥수수통조림,햄통조림,어묵,맛살,크래미,곤약,묵,도토리묵,메밀묵,청포묵,라이스페이퍼,만두피,춘권피,또띠아칩,김자반,김가루,미역국수,두유면,시리얼,그래놀라,만두",
+                "음료·기타": "물,탄산수,얼음,커피,인스턴트커피,에스프레소,홍차,녹차,보리차,코코아,오렌지주스,사과주스,토마토주스,맥주,소주,청주,맛술,미림,화이트와인,레드와인,막걸리,육수,멸치육수,다시마육수,사골육수,닭육수,채소육수,코인육수,치킨스톡,비프스톡,다시다,베이킹파우더,베이킹소다,이스트,젤라틴,한천가루,코코넛밀크"
+            };
+
+            /* ---------- 2. 동의어·오타·영문 ---------- */
+            const ALIAS_DATA = {
+                "계란": ["달걀", "에그", "egg", "eggs", "계란알", "날계란", "생계란"],
+                "양파": ["onion", "어니언", "양파우"],
+                "대파": ["파", "큰파", "green onion", "scallion"],
+                "쪽파": ["잔파"],
+                "마늘": ["garlic", "갈릭", "통마늘", "깐마늘"],
+                "다진소고기": ["소고기다짐육", "다짐육"],
+                "다진돼지고기": ["돼지고기다짐육", "돼지다짐육"],
+                "고춧가루": ["고추가루", "고추 가루", "고추분말"],
+                "돼지고기": ["돈육", "돼지", "pork", "제육용고기"],
+                "삼겹살": ["삼겹", "오겹살", "pork belly"],
+                "소고기": ["쇠고기", "우육", "beef", "불고기감", "국거리"],
+                "닭고기": ["계육", "닭", "chicken"],
+                "닭가슴살": ["닭가슴", "chicken breast"],
+                "닭안심": ["닭안심살"],
+                "김치": ["kimchi", "김장김치"],
+                "배추김치": ["포기김치", "배추 김치"],
+                "묵은지": ["신김치", "익은김치", "쉰김치"],
+                "두부": ["tofu", "부침두부", "찌개두부"],
+                "연두부": ["순두부(연두부)"],
+                "우유": ["milk", "흰우유"],
+                "감자": ["potato"],
+                "고구마": ["sweet potato"],
+                "당근": ["carrot"],
+                "오이": ["cucumber"],
+                "토마토": ["tomato"],
+                "방울토마토": ["체리토마토", "cherry tomato"],
+                "애호박": ["호박"],
+                "청피망": ["피망", "bell pepper"],
+                "파프리카": ["sweet pepper"],
+                "브로콜리": ["브로컬리", "브로꼴리", "broccoli"],
+                "양배추": ["캐비지", "cabbage"],
+                "배추": ["알배추", "알배기배추"],
+                "참기름": ["sesame oil"],
+                "들기름": ["perilla oil"],
+                "간장": ["soy sauce"],
+                "진간장": ["양념간장"],
+                "국간장": ["집간장"],
+                "된장": ["soybean paste"],
+                "고추장": ["gochujang"],
+                "소금": ["salt"],
+                "설탕": ["sugar"],
+                "새우": ["shrimp", "prawn", "칵테일새우", "냉동새우"],
+                "오징어": ["squid"],
+                "참치": ["tuna"],
+                "참치캔": ["참치통조림", "통조림참치", "캔참치"],
+                "연어": ["salmon"],
+                "고등어": ["mackerel", "고갈비"],
+                "런천미트": ["스팸", "리챔", "spam"],
+                "밥": ["공기밥", "햇반", "즉석밥", "흰밥", "쌀밥"],
+                "잡곡": ["잡곡밥", "오곡", "혼합곡"],
+                "현미": ["현미밥"],
+                "어묵": ["오뎅"],
+                "버터": ["butter"],
+                "치즈": ["cheese"],
+                "모차렐라치즈": ["모짜렐라", "모짜렐라치즈", "피자치즈"],
+                "슬라이스치즈": ["체다슬라이스"],
+                "표고버섯": ["표고"],
+                "새송이버섯": ["새송이"],
+                "느타리버섯": ["느타리"],
+                "팽이버섯": ["팽이"],
+                "양송이버섯": ["양송이"],
+                "국수": ["면", "국수면"],
+                "라면": ["라면사리"],
+                "콩나물": ["콩나물무침용"],
+                "식용유": ["기름", "요리유"],
+                "올리브유": ["올리브오일", "olive oil"],
+                "아보카도오일": ["아보카도유"],
+                "육수": ["국물"],
+                "맛술": ["미향"]
+            };
+
+            /* ---------- 3. 상위 재료 관계 ---------- */
+            const PARENT_DATA = {
+                "돼지고기": "삼겹살,목살,앞다리살,뒷다리살,돼지등심,돼지안심,돼지갈비,돼지등갈비,항정살,가브리살,다진돼지고기,보쌈고기",
+                "소고기": "소고기등심,소고기안심,소고기채끝,소고기우둔살,소고기설도,소고기양지,소고기사태,소갈비,차돌박이,우삼겹,다진소고기",
+                "닭고기": "닭가슴살,닭다리살,닭날개,닭봉,닭안심,통닭",
+                "김치": "배추김치,깍두기,총각김치,열무김치,파김치,백김치,묵은지",
+                "두부": "연두부,순두부",
+                "계란": "메추리알",
+                "치즈": "모차렐라치즈,체다치즈,파르메산치즈,고다치즈,에멘탈치즈,리코타치즈,크림치즈,페타치즈,브리치즈,슬라이스치즈,스트링치즈",
+                "간장": "진간장,양조간장,국간장,조선간장",
+                "버섯": "표고버섯,새송이버섯,느타리버섯,팽이버섯,양송이버섯,목이버섯,만가닥버섯,백만송이버섯,송이버섯,능이버섯",
+                "잡곡": "현미,흑미,보리,귀리,찹쌀,수수,기장",
+                "명태": "동태,황태,북어",
+                "우유": "저지방우유,무지방우유"
+            };
+
+            /* ---------- 4. 수량·상태 규칙 ---------- */
+            const KOREAN_NUMBER = {
+                "한": 1, "하나": 1, "두": 2, "둘": 2, "세": 3, "셋": 3, "네": 4, "넷": 4,
+                "다섯": 5, "여섯": 6, "일곱": 7, "여덟": 8, "아홉": 9, "열": 10, "반": 0.5
+            };
+
+            const UNIT_DATA = {
+                "kg": ["g", 1000], "킬로": ["g", 1000], "키로": ["g", 1000],
+                "g": ["g", 1], "그램": ["g", 1],
+                "l": ["ml", 1000], "리터": ["ml", 1000],
+                "ml": ["ml", 1], "미리": ["ml", 1],
+                "개": ["개", 1], "알": ["개", 1], "모": ["모", 1], "토막": ["토막", 1],
+                "쪽": ["쪽", 1], "대": ["대", 1], "줌": ["줌", 1], "봉지": ["봉지", 1],
+                "봉": ["봉지", 1], "팩": ["팩", 1], "컵": ["컵", 1], "큰술": ["큰술", 1],
+                "작은술": ["작은술", 1], "마리": ["마리", 1], "장": ["장", 1],
+                "공기": ["공기", 1], "캔": ["캔", 1], "포기": ["포기", 1], "단": ["단", 1]
+            };
+
+            const STATE_WORDS = {
+                "냉동": ["storage", "냉동"], "얼린": ["storage", "냉동"],
+                "냉장": ["storage", "냉장"],
+                "다진": ["prep", "다짐"], "간": ["prep", "다짐"],
+                "삶은": ["prep", "삶음"], "익힌": ["prep", "익힘"],
+                "남은": ["prep", "남은 음식"], "먹다남은": ["prep", "남은 음식"],
+                "썬": ["prep", "썰어둠"], "채썬": ["prep", "썰어둠"],
+                "말린": ["prep", "건조"], "건": ["prep", "건조"]
+            };
+
+            const IGNORE_WORDS = [
+                "조금", "약간", "적당량", "정도", "쯤", "약", "대충", "있어", "있음",
+                "국산", "수입", "유기농", "친환경", "신선한", "생", "먹다", "집에", "냉장고에"
+            ];
+
+            const PREFIX_WORDS = ["먹다남은", "냉동", "냉장", "다진", "삶은", "남은", "국산", "수입", "유기농", "생"];
+
+            /* ---------- 5. 사전 구성 ---------- */
+            const ingredientMap = new Map(); // 표준명 → { name, category, parent }
+            const keyMap = new Map();        // 검색키 → 표준명
+            let aliasCount = 0;
+
+            function compact(text) {
+                return String(text)
+                    .normalize("NFKC")
+                    .toLowerCase()
+                    .replace(/[·•]/g, " ")
+                    .replace(/\s+/g, " ")
+                    .trim();
+            }
+
+            function toKey(text) {
+                return compact(text).replace(/\s+/g, "");
+            }
+
+            Object.keys(CATEGORY_DATA).forEach(function (category) {
+                CATEGORY_DATA[category].split(",").forEach(function (name) {
+                    name = name.trim();
+                    if (!name || ingredientMap.has(name)) return;
+                    ingredientMap.set(name, { name: name, category: category, parent: null });
+                    keyMap.set(toKey(name), name);
+                });
+            });
+
+            Object.keys(ALIAS_DATA).forEach(function (name) {
+                if (!ingredientMap.has(name)) return;
+                ALIAS_DATA[name].forEach(function (alias) {
+                    const key = toKey(alias);
+                    if (!keyMap.has(key)) {
+                        keyMap.set(key, name);
+                        aliasCount++;
+                    }
+                });
+            });
+
+            Object.keys(PARENT_DATA).forEach(function (parent) {
+                PARENT_DATA[parent].split(",").forEach(function (child) {
+                    const item = ingredientMap.get(child.trim());
+                    if (item) item.parent = parent;
+                });
+            });
+
+            /* ---------- 6. 유사도 계산 ---------- */
+            function levenshtein(a, b) {
+                const rows = [];
+                for (let i = 0; i <= a.length; i++) rows.push([i]);
+                for (let j = 1; j <= b.length; j++) rows[0][j] = j;
+
+                for (let i = 1; i <= a.length; i++) {
+                    for (let j = 1; j <= b.length; j++) {
+                        rows[i][j] = Math.min(
+                            rows[i - 1][j] + 1,
+                            rows[i][j - 1] + 1,
+                            rows[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+                        );
+                    }
+                }
+                return rows[a.length][b.length];
+            }
+
+            function fuzzyFind(key) {
+                if (key.length < 3) return null;
+
+                const maxDistance = key.length <= 4 ? 1 : 2;
+                let best = null;
+                let bestDistance = 99;
+
+                keyMap.forEach(function (name, candidateKey) {
+                    if (Math.abs(candidateKey.length - key.length) > maxDistance) return;
+                    const distance = levenshtein(key, candidateKey);
+                    if (distance <= maxDistance && distance < bestDistance) {
+                        best = name;
+                        bestDistance = distance;
+                    }
+                });
+
+                return best;
+            }
+
+            /* ---------- 7. 한 항목 분석 ---------- */
+            function parseQuantity(text) {
+                const unitNames = Object.keys(UNIT_DATA)
+                    .sort(function (a, b) { return b.length - a.length; })
+                    .join("|");
+
+                const numberPattern = "(\\d+\\/\\d+|\\d+(?:\\.\\d+)?|한|하나|두|둘|세|셋|네|넷|다섯|여섯|일곱|여덟|아홉|열|반)";
+                const regex = new RegExp(numberPattern + "\\s*(" + unitNames + ")(?![a-z가-힣])", "i");
+                const match = text.match(regex);
+
+                if (!match) return { text: text, quantity: null, unit: null };
+
+                let value;
+                const raw = match[1];
+
+                if (raw.includes("/")) {
+                    const parts = raw.split("/");
+                    value = Number(parts[0]) / Number(parts[1]);
+                } else if (/^\d/.test(raw)) {
+                    value = Number(raw);
+                } else {
+                    value = KOREAN_NUMBER[raw];
+                }
+
+                const unitInfo = UNIT_DATA[match[2].toLowerCase()];
+
+                return {
+                    text: (text.slice(0, match.index) + " " + text.slice(match.index + match[0].length)).trim(),
+                    quantity: Math.round(value * unitInfo[1] * 100) / 100,
+                    unit: unitInfo[0]
+                };
+            }
+
+            function parseOne(segment) {
+                const originalText = segment.trim();
+                let text = compact(originalText);
+
+                // 1) 전체 표현이 사전에 있으면 바로 확정 (예: 다진소고기, 간장)
+                const wholeKey = toKey(text);
+                if (keyMap.has(wholeKey)) {
+                    return buildResult(originalText, keyMap.get(wholeKey), null, null, null, null, "exact", 0.99);
+                }
+
+                // 2) 수량·단위
+                const quantityInfo = parseQuantity(text);
+                text = quantityInfo.text;
+
+                // 3) 상태·불필요 단어
+                let storage = null;
+                let prep = null;
+
+                text = text.replace(/먹다\s*남은/g, "남은");
+
+                const tokens = text.split(" ").filter(function (token) {
+                    if (!token) return false;
+
+                    if (STATE_WORDS[token]) {
+                        if (STATE_WORDS[token][0] === "storage") storage = STATE_WORDS[token][1];
+                        else prep = STATE_WORDS[token][1];
+                        return false;
+                    }
+
+                    return !IGNORE_WORDS.includes(token);
+                });
+
+                let key = toKey(tokens.join(" "));
+                let name = keyMap.get(key) || null;
+                let method = "exact";
+                let confidence = 0.98;
+
+                // 4) 띄어쓰기 없이 붙은 상태어 (예: 냉동삼겹살)
+                if (!name) {
+                    for (const prefix of PREFIX_WORDS) {
+                        if (key.startsWith(prefix) && keyMap.has(key.slice(prefix.length))) {
+                            const word = prefix === "먹다남은" ? "남은" : prefix;
+                            if (STATE_WORDS[word]) {
+                                if (STATE_WORDS[word][0] === "storage") storage = STATE_WORDS[word][1];
+                                else prep = STATE_WORDS[word][1];
+                            }
+                            key = key.slice(prefix.length);
+                            name = keyMap.get(key);
+                            confidence = 0.95;
+                            break;
+                        }
+                    }
+                }
+
+                // 5) 오타 보정
+                if (!name) {
+                    name = fuzzyFind(key);
+                    method = "fuzzy";
+                    confidence = 0.82;
+                }
+
+                if (!name) {
+                    return buildResult(originalText, null, quantityInfo.quantity, quantityInfo.unit, storage, prep, "unmatched", 0, key);
+                }
+
+                return buildResult(originalText, name, quantityInfo.quantity, quantityInfo.unit, storage, prep, method, confidence);
+            }
+
+            function buildResult(originalText, name, quantity, unit, storage, prep, method, confidence, rawKey) {
+                const info = name ? ingredientMap.get(name) : null;
+                return {
+                    originalText: originalText,
+                    name: name,
+                    displayName: name || rawKey || originalText,
+                    category: info ? info.category : null,
+                    parent: info ? info.parent : null,
+                    quantity: quantity,
+                    unit: unit,
+                    storage: storage,
+                    prep: prep,
+                    matchMethod: method,
+                    confidence: confidence,
+                    needsCheck: method !== "exact" || name === "대파" && toKey(originalText).startsWith("파")
+                };
+            }
+
+            /* ---------- 8. 여러 항목 분석 ---------- */
+            function normalize(text) {
+                return String(text || "")
+                    .split(/[,，、\/+\n;]|\s+(?:하고|이랑|랑|그리고)\s+/)
+                    .map(function (part) { return part.trim(); })
+                    .filter(Boolean)
+                    .map(parseOne);
+            }
+
+            /* ---------- 9. 재료 비교 ---------- */
+            function canonical(text) {
+                const result = parseOne(String(text));
+                return result.name || toKey(text);
+            }
+
+            function family(name) {
+                const list = [name];
+                let current = ingredientMap.get(name);
+                let guard = 0;
+                while (current && current.parent && guard < 5) {
+                    list.push(current.parent);
+                    current = ingredientMap.get(current.parent);
+                    guard++;
+                }
+                return list;
+            }
+
+            // 레시피 재료(required)를 보유 재료(owned)로 충족할 수 있는지
+            function sameFood(required, owned) {
+                const need = canonical(required);
+                const have = canonical(owned);
+
+                if (need === "채소" || need === "냉장고채소") {
+                    const info = ingredientMap.get(have);
+                    return Boolean(info && (info.category === "채소" || info.category === "버섯"));
+                }
+
+                if (need === "밥" && ["쌀", "백미", "현미", "잡곡", "찹쌀"].includes(have)) return true;
+
+                return need === have || family(have).includes(need) || family(need).includes(have);
+            }
+
+            return {
+                normalize: normalize,
+                parseOne: parseOne,
+                canonical: canonical,
+                sameFood: sameFood,
+                ingredientCount: ingredientMap.size,
+                aliasCount: aliasCount
+            };
+        })();
+    </script>
+
+
+    <!-- ========================================
+         JavaScript 2: 화면 기능
+    ======================================== -->
     <script>
         /* ========================================
            1. 공통 도구
         ======================================== */
-
         function escapeHtml(text) {
             const div = document.createElement("div");
             div.textContent = String(text);
@@ -1222,36 +1182,27 @@
         function splitFoods(text) {
             return text
                 .split(",")
-                .map(function (food) {
-                    return food.trim();
-                })
-                .filter(function (food) {
-                    return food !== "";
-                });
+                .map(function (food) { return food.trim(); })
+                .filter(function (food) { return food !== ""; });
         }
 
-        function includesAny(text, words) {
-            return words.some(function (word) {
-                return text.includes(word);
-            });
+        function formatAmount(item) {
+            if (item.quantity === null || item.quantity === undefined) return "";
+            return item.quantity + (item.unit || "");
         }
+
+        document.getElementById("dictionaryStatus").textContent =
+            "✅ 식재료 사전 " + IngredientNormalizer.ingredientCount +
+            "개 · 동의어/오타 " + IngredientNormalizer.aliasCount + "개 적용 중";
 
 
         /* ========================================
            2. 기능 카드
         ======================================== */
-
-        const featureMenus =
-            document.querySelectorAll(".feature-menu");
-
-        const todayCard =
-            document.getElementById("todayCard");
-
-        const monthlyCard =
-            document.getElementById("monthlyCard");
-
-        const quickCard =
-            document.getElementById("quickCard");
+        const featureMenus = document.querySelectorAll(".feature-menu");
+        const todayCard = document.getElementById("todayCard");
+        const monthlyCard = document.getElementById("monthlyCard");
+        const quickCard = document.getElementById("quickCard");
 
         let todayMode = "normal";
 
@@ -1266,14 +1217,8 @@
                 if (feature === "today") {
                     todayMode = "normal";
                     todayCard.classList.add("active");
-
-                    document.getElementById("recipeMode").textContent =
-                        "🤖 일반 레시피 추천 모드";
-
-                    document.getElementById(
-                        "todayRecommendButton"
-                    ).textContent =
-                        "🤖 오늘의 레시피 추천받기";
+                    document.getElementById("recipeMode").textContent = "🤖 일반 레시피 추천 모드";
+                    document.getElementById("todayRecommendButton").textContent = "🤖 오늘의 레시피 추천받기";
                 }
 
                 if (feature === "monthly") {
@@ -1283,14 +1228,8 @@
                 if (feature === "quick") {
                     todayMode = "quick";
                     quickCard.classList.add("active");
-
-                    document.getElementById("recipeMode").textContent =
-                        "⏱️ 20분 이내 빠른 요리 모드";
-
-                    document.getElementById(
-                        "todayRecommendButton"
-                    ).textContent =
-                        "⏱️ 빠른 요리 추천받기";
+                    document.getElementById("recipeMode").textContent = "⏱️ 20분 이내 빠른 요리 모드";
+                    document.getElementById("todayRecommendButton").textContent = "⏱️ 빠른 요리 추천받기";
                 }
             });
         });
@@ -1299,229 +1238,209 @@
         /* ========================================
            3. 오늘의 레시피
         ======================================== */
+        const todayIngredients = document.getElementById("todayIngredients");
+        const todayTime = document.getElementById("todayTime");
+        const todayRecommendButton = document.getElementById("todayRecommendButton");
+        const todayMessage = document.getElementById("todayMessage");
+        const todayResult = document.getElementById("todayResult");
+        const normalizedBox = document.getElementById("normalizedBox");
+        const normalizedChips = document.getElementById("normalizedChips");
 
-        const todayIngredients =
-            document.getElementById("todayIngredients");
+        todayRecommendButton.addEventListener("click", createTodayRecipe);
 
-        const todayTime =
-            document.getElementById("todayTime");
+        todayIngredients.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") createTodayRecipe();
+        });
 
-        const todayRecommendButton =
-            document.getElementById("todayRecommendButton");
+        function renderNormalized(items) {
+            normalizedChips.innerHTML = items.map(function (item) {
+                const details = [];
+                const amount = formatAmount(item);
 
-        const todayMessage =
-            document.getElementById("todayMessage");
+                if (amount) details.push(amount);
+                if (item.storage) details.push(item.storage);
+                if (item.prep) details.push(item.prep);
 
-        const todayResult =
-            document.getElementById("todayResult");
+                let cls = "food-chip";
+                let note = "인식률 " + Math.round(item.confidence * 100) + "%";
 
-
-        todayRecommendButton.addEventListener(
-            "click",
-            createTodayRecipe
-        );
-
-        todayIngredients.addEventListener(
-            "keydown",
-            function (event) {
-                if (event.key === "Enter") {
-                    createTodayRecipe();
+                if (!item.name) {
+                    cls += " unknown";
+                    note = "사전에 없는 재료";
+                } else if (item.needsCheck) {
+                    cls += " warn";
+                    note += " · 확인 필요";
                 }
-            }
-        );
 
+                const changed = item.name && item.originalText.replace(/\s/g, "") !== item.name
+                    ? " ← " + item.originalText
+                    : "";
+
+                return "<span class='" + cls + "'>" +
+                    "<strong>" + escapeHtml(item.displayName) + "</strong>" +
+                    "<small>" + escapeHtml((details.length ? details.join(" · ") + " · " : "") + note + changed) + "</small>" +
+                    "</span>";
+            }).join("");
+
+            normalizedBox.classList.add("show");
+        }
 
         function createTodayRecipe() {
             const input = todayIngredients.value.trim();
 
             if (input === "") {
                 todayResult.classList.remove("show");
-
-                showMessage(
-                    todayMessage,
-                    "재료를 한 가지 이상 입력해 주세요.",
-                    "error"
-                );
-
+                normalizedBox.classList.remove("show");
+                showMessage(todayMessage, "재료를 한 가지 이상 입력해 주세요.", "error");
                 todayIngredients.focus();
                 return;
             }
 
             hideMessage(todayMessage);
 
-            const food = input.toLowerCase();
+            const items = IngredientNormalizer.normalize(input);
+            renderNormalized(items);
+
+            const owned = items.map(function (item) { return item.name || item.displayName; });
+
+            function has(food) {
+                return owned.some(function (name) {
+                    return IngredientNormalizer.sameFood(food, name);
+                });
+            }
+
             let title = "";
             let description = "";
             let steps = [];
             let healthPoint = "";
 
-            if (
-                food.includes("두부") &&
-                food.includes("김치")
-            ) {
+            if (has("두부") && has("김치")) {
                 title = "김치 두부볶음";
-
-                description =
-                    "두부를 단백질 반찬으로 활용하는 간단한 한 끼입니다.";
-
+                description = "두부를 단백질 반찬으로 활용하는 간단한 한 끼입니다.";
                 steps = [
                     "두부의 물기를 닦고 먹기 좋은 크기로 자릅니다.",
                     "김치는 국물을 가볍게 짜고 작게 자릅니다.",
                     "팬에서 김치를 먼저 볶은 뒤 두부를 넣습니다.",
                     "참기름은 마지막에 소량만 넣습니다."
                 ];
-
-                healthPoint =
-                    "김치의 양을 줄이고 두부와 채소를 늘리면 나트륨 부담을 낮출 수 있습니다.";
+                healthPoint = "김치의 양을 줄이고 두부와 채소를 늘리면 나트륨 부담을 낮출 수 있습니다.";
             }
-
-            else if (
-                includesAny(food, ["계란", "달걀"]) &&
-                food.includes("밥")
-            ) {
+            else if (has("계란") && has("밥")) {
                 title = "채소 계란볶음밥";
-
-                description =
-                    "밥, 계란, 남은 채소를 한 그릇으로 구성합니다.";
-
+                description = "밥, 계란, 남은 채소를 한 그릇으로 구성합니다.";
                 steps = [
                     "계란을 먼저 부드럽게 익힙니다.",
                     "양파나 대파 등 남은 채소를 볶습니다.",
                     "밥을 넣고 골고루 섞습니다.",
                     "간장은 1인분 기준 약간만 넣어 마무리합니다."
                 ];
-
-                healthPoint =
-                    "밥의 양을 조금 줄이고 채소를 넉넉히 넣으면 균형을 맞추기 쉽습니다.";
+                healthPoint = "밥의 양을 조금 줄이고 채소를 넉넉히 넣으면 균형을 맞추기 쉽습니다.";
             }
-
-            else if (
-                food.includes("고등어") ||
-                food.includes("삼치")
-            ) {
+            else if (has("고등어") || has("삼치") || has("꽁치") || has("갈치") || has("연어")) {
                 title = "생선구이와 채소 곁들임";
-
-                description =
-                    "생선을 단백질 반찬으로 하고 채소 한 가지를 곁들입니다.";
-
+                description = "생선을 단백질 반찬으로 하고 채소 한 가지를 곁들입니다.";
                 steps = [
                     "생선의 물기를 닦습니다.",
                     "팬이나 에어프라이어에서 노릇하게 익힙니다.",
                     "오이, 양배추 또는 나물을 곁들입니다.",
                     "간장 대신 레몬즙이나 식초를 소량 활용합니다."
                 ];
-
-                healthPoint =
-                    "이미 간이 된 생선은 추가 소금을 넣지 않는 것이 좋습니다.";
+                healthPoint = "이미 간이 된 생선은 추가 소금을 넣지 않는 것이 좋습니다.";
             }
-
-            else if (food.includes("두부")) {
+            else if (has("돼지고기") && (has("김치") || has("양파"))) {
+                title = "돼지고기 양파볶음";
+                description = "돼지고기와 채소를 한 팬에서 볶는 단백질 반찬입니다.";
+                steps = [
+                    "돼지고기는 기름이 많은 부분을 조금 잘라냅니다.",
+                    "양파와 함께 중불에서 볶습니다.",
+                    "김치가 있다면 작게 잘라 마지막에 넣습니다.",
+                    "간장이나 고추장은 소량만 사용합니다."
+                ];
+                healthPoint = "고기 양보다 채소 양을 늘리면 포만감은 유지하면서 부담을 줄일 수 있습니다.";
+            }
+            else if (has("두부")) {
                 title = "두부구이와 채소무침";
-
-                description =
-                    "부드러운 두부와 채소를 이용한 간단한 집밥입니다.";
-
+                description = "부드러운 두부와 채소를 이용한 간단한 집밥입니다.";
                 steps = [
                     "두부의 물기를 제거하고 자릅니다.",
                     "팬에 기름을 소량 두르고 앞뒤로 굽습니다.",
                     "오이 또는 상추를 가볍게 무칩니다.",
                     "간장 양념은 찍어 먹을 만큼만 준비합니다."
                 ];
-
-                healthPoint =
-                    "두부는 조리가 간단하고 부드러운 단백질 식품입니다.";
+                healthPoint = "두부는 조리가 간단하고 부드러운 단백질 식품입니다.";
             }
-
-            else if (includesAny(food, ["계란", "달걀"])) {
+            else if (has("계란")) {
                 title = "부드러운 채소 계란찜";
-
-                description =
-                    "씹기 편하고 조리가 간단한 단백질 반찬입니다.";
-
+                description = "씹기 편하고 조리가 간단한 단백질 반찬입니다.";
                 steps = [
                     "계란을 풀고 물을 조금 섞습니다.",
                     "잘게 썬 채소를 넣습니다.",
                     "약한 불이나 전자레인지로 천천히 익힙니다.",
                     "소금은 아주 소량만 넣습니다."
                 ];
-
-                healthPoint =
-                    "계란찜은 부드러워 씹기가 불편한 경우에도 활용하기 쉽습니다.";
+                healthPoint = "계란찜은 부드러워 씹기가 불편한 경우에도 활용하기 쉽습니다.";
             }
-
-            else if (food.includes("감자")) {
+            else if (has("감자")) {
                 title = "감자 양파볶음";
-
-                description =
-                    "감자와 양파를 활용하는 익숙한 가정식 반찬입니다.";
-
+                description = "감자와 양파를 활용하는 익숙한 가정식 반찬입니다.";
                 steps = [
                     "감자와 양파를 가늘게 썹니다.",
                     "감자는 물에 잠깐 담갔다가 물기를 제거합니다.",
                     "팬에서 감자를 먼저 익힌 뒤 양파를 넣습니다.",
                     "소금은 마지막에 소량만 넣습니다."
                 ];
-
-                healthPoint =
-                    "감자는 밥과 함께 먹으면 탄수화물 비중이 높아질 수 있으므로 밥 양을 조절하세요.";
+                healthPoint = "감자는 밥과 함께 먹으면 탄수화물 비중이 높아질 수 있으므로 밥 양을 조절하세요.";
             }
-
             else {
                 title = "냉장고 재료 채소볶음";
-
-                description =
-                    "입력한 재료를 한 팬에서 간단하게 조리합니다.";
-
+                description = "입력한 재료를 한 팬에서 간단하게 조리합니다.";
                 steps = [
                     "재료를 비슷한 크기로 자릅니다.",
                     "단단한 재료부터 먼저 익힙니다.",
                     "두부, 계란, 생선 또는 고기 중 단백질 식품을 추가합니다.",
                     "간장이나 소금은 소량만 사용합니다."
                 ];
-
-                healthPoint =
-                    "한 끼에는 단백질 식품과 채소가 함께 들어가는지 확인하세요.";
+                healthPoint = "한 끼에는 단백질 식품과 채소가 함께 들어가는지 확인하세요.";
             }
 
-            if (
-                todayMode === "quick" ||
-                Number(todayTime.value) <= 20
-            ) {
+            if (todayMode === "quick" || Number(todayTime.value) <= 20) {
                 title = "⏱️ " + title;
+                healthPoint += " 재료를 작게 썰고 한 개의 팬을 사용하면 조리시간을 줄일 수 있습니다.";
+            }
 
-                healthPoint +=
-                    " 재료를 작게 썰고 한 개의 팬을 사용하면 조리시간을 줄일 수 있습니다.";
+            const usedNames = items.map(function (item) {
+                const amount = formatAmount(item);
+                return item.displayName + (amount ? " " + amount : "");
+            }).join(", ");
+
+            const unknown = items.filter(function (item) { return !item.name; });
+            const frozen = items.filter(function (item) { return item.storage === "냉동"; });
+
+            let extraNote = "";
+
+            if (frozen.length) {
+                extraNote += "<p style='margin-top:10px;'>🧊 <strong>해동 필요:</strong> " +
+                    escapeHtml(frozen.map(function (i) { return i.displayName; }).join(", ")) +
+                    " — 조리 전 냉장 해동 시간을 고려하세요.</p>";
+            }
+
+            if (unknown.length) {
+                extraNote += "<p style='margin-top:10px; color:#8a5a00;'>❔ 사전에 없는 재료: " +
+                    escapeHtml(unknown.map(function (i) { return i.originalText; }).join(", ")) +
+                    " (추천에는 참고만 했습니다)</p>";
             }
 
             todayResult.innerHTML =
-                "<h3>" +
-                escapeHtml(title) +
-                "</h3>" +
-
-                "<p><strong>사용 재료:</strong> " +
-                escapeHtml(input) +
-                "</p>" +
-
-                "<p>" +
-                escapeHtml(description) +
-                "</p>" +
-
+                "<h3>" + escapeHtml(title) + "</h3>" +
+                "<p><strong>사용 재료:</strong> " + escapeHtml(usedNames) + "</p>" +
+                "<p>" + escapeHtml(description) + "</p>" +
                 "<h4 style='margin:16px 0 8px;'>조리 순서</h4>" +
-
-                "<ol>" +
-                steps
-                    .map(function (step) {
-                        return "<li>" +
-                            escapeHtml(step) +
-                            "</li>";
-                    })
-                    .join("") +
-                "</ol>" +
-
-                "<p style='margin-top:16px; color:#386145;'>" +
-                "<strong>건강 포인트:</strong> " +
-                escapeHtml(healthPoint) +
-                "</p>";
+                "<ol>" + steps.map(function (step) {
+                    return "<li>" + escapeHtml(step) + "</li>";
+                }).join("") + "</ol>" +
+                "<p style='margin-top:16px; color:#386145;'><strong>건강 포인트:</strong> " +
+                escapeHtml(healthPoint) + "</p>" +
+                extraNote;
 
             todayResult.classList.add("show");
         }
@@ -1530,101 +1449,83 @@
         /* ========================================
            4. 냉장고 재료 관리
         ======================================== */
-
-        const newIngredient =
-            document.getElementById("newIngredient");
-
-        const ingredientAmount =
-            document.getElementById("ingredientAmount");
-
-        const addIngredientButton =
-            document.getElementById("addIngredientButton");
-
-        const sampleIngredientsButton =
-            document.getElementById("sampleIngredientsButton");
-
-        const clearIngredientsButton =
-            document.getElementById("clearIngredientsButton");
-
-        const ingredientTags =
-            document.getElementById("ingredientTags");
+        const newIngredient = document.getElementById("newIngredient");
+        const ingredientAmount = document.getElementById("ingredientAmount");
+        const addIngredientButton = document.getElementById("addIngredientButton");
+        const sampleIngredientsButton = document.getElementById("sampleIngredientsButton");
+        const clearIngredientsButton = document.getElementById("clearIngredientsButton");
+        const ingredientTags = document.getElementById("ingredientTags");
+        const inventoryMessage = document.getElementById("inventoryMessage");
 
         let inventory = loadInventory();
-
         renderInventory();
 
+        addIngredientButton.addEventListener("click", addIngredient);
 
-        addIngredientButton.addEventListener(
-            "click",
-            addIngredient
-        );
+        newIngredient.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") addIngredient();
+        });
 
-        newIngredient.addEventListener(
-            "keydown",
-            function (event) {
-                if (event.key === "Enter") {
-                    addIngredient();
-                }
-            }
-        );
+        sampleIngredientsButton.addEventListener("click", function () {
+            inventory = [
+                { name: "두부", amount: "1모" },
+                { name: "계란", amount: "6개" },
+                { name: "김치", amount: "조금" },
+                { name: "애호박", amount: "1개" },
+                { name: "양파", amount: "2개" },
+                { name: "고등어", amount: "2토막" }
+            ];
+            hideMessage(inventoryMessage);
+            saveInventory();
+            renderInventory();
+        });
 
-        sampleIngredientsButton.addEventListener(
-            "click",
-            function () {
-                inventory = [
-                    { name: "두부", amount: "1모" },
-                    { name: "계란", amount: "6개" },
-                    { name: "김치", amount: "조금" },
-                    { name: "애호박", amount: "1개" },
-                    { name: "양파", amount: "2개" },
-                    { name: "고등어", amount: "2토막" }
-                ];
-
-                saveInventory();
-                renderInventory();
-            }
-        );
-
-        clearIngredientsButton.addEventListener(
-            "click",
-            function () {
-                inventory = [];
-                saveInventory();
-                renderInventory();
-            }
-        );
-
+        clearIngredientsButton.addEventListener("click", function () {
+            inventory = [];
+            hideMessage(inventoryMessage);
+            saveInventory();
+            renderInventory();
+        });
 
         function addIngredient() {
-            const name = newIngredient.value.trim();
-            const amount = ingredientAmount.value.trim();
+            const rawName = newIngredient.value.trim();
+            const rawAmount = ingredientAmount.value.trim();
 
-            if (name === "") {
+            if (rawName === "") {
                 newIngredient.focus();
                 return;
             }
 
-            const exists = inventory.some(function (item) {
-                return item.name === name;
+            // 쉼표로 여러 재료를 한 번에 입력해도 처리
+            const items = IngredientNormalizer.normalize(rawName);
+            const messages = [];
+
+            items.forEach(function (item) {
+                const name = item.name || item.originalText;
+                const amount = (items.length === 1 && rawAmount) || formatAmount(item) || "수량 미입력";
+                const memo = item.storage ? " (" + item.storage + ")" : "";
+
+                const index = inventory.findIndex(function (saved) {
+                    return IngredientNormalizer.canonical(saved.name) === IngredientNormalizer.canonical(name);
+                });
+
+                if (index >= 0) {
+                    inventory[index] = { name: name, amount: amount + memo };
+                } else {
+                    inventory.push({ name: name, amount: amount + memo });
+                }
+
+                if (!item.name) {
+                    messages.push("'" + item.originalText + "'은(는) 사전에 없어 입력한 그대로 저장했습니다.");
+                } else if (item.originalText.replace(/\s/g, "") !== item.name) {
+                    messages.push("'" + item.originalText + "' → '" + item.name + "'(으)로 저장했습니다.");
+                }
             });
 
-            if (exists) {
-                inventory = inventory.map(function (item) {
-                    if (item.name === name) {
-                        return {
-                            name: name,
-                            amount: amount || item.amount
-                        };
-                    }
-
-                    return item;
-                });
-            }
-            else {
-                inventory.push({
-                    name: name,
-                    amount: amount || "수량 미입력"
-                });
+            if (messages.length) {
+                showMessage(inventoryMessage, messages.join(" "), "info");
+            } else {
+                hideMessage(inventoryMessage);
             }
 
             newIngredient.value = "";
@@ -1632,10 +1533,8 @@
 
             saveInventory();
             renderInventory();
-
             newIngredient.focus();
         }
-
 
         function removeIngredient(index) {
             inventory.splice(index, 1);
@@ -1643,571 +1542,182 @@
             renderInventory();
         }
 
-
         function renderInventory() {
             if (inventory.length === 0) {
-                ingredientTags.innerHTML =
-                    "<span class='empty-note'>" +
-                    "저장된 냉장고 재료가 없습니다." +
-                    "</span>";
-
+                ingredientTags.innerHTML = "<span class='empty-note'>저장된 냉장고 재료가 없습니다.</span>";
                 return;
             }
 
-            ingredientTags.innerHTML =
-                inventory
-                    .map(function (item, index) {
-                        return (
-                            "<span class='ingredient-tag'>" +
-                            escapeHtml(item.name) +
-                            " · " +
-                            escapeHtml(item.amount) +
+            ingredientTags.innerHTML = inventory.map(function (item, index) {
+                return "<span class='ingredient-tag'>" +
+                    escapeHtml(item.name) + " · " + escapeHtml(item.amount) +
+                    "<button type='button' aria-label='" + escapeHtml(item.name) + " 삭제' data-index='" + index + "'>×</button>" +
+                    "</span>";
+            }).join("");
 
-                            "<button " +
-                            "type='button' " +
-                            "aria-label='" +
-                            escapeHtml(item.name) +
-                            " 삭제' " +
-                            "data-index='" +
-                            index +
-                            "'>" +
-                            "×" +
-                            "</button>" +
-
-                            "</span>"
-                        );
-                    })
-                    .join("");
-
-            const removeButtons =
-                ingredientTags.querySelectorAll("button");
-
-            removeButtons.forEach(function (button) {
-                button.addEventListener(
-                    "click",
-                    function () {
-                        removeIngredient(
-                            Number(button.dataset.index)
-                        );
-                    }
-                );
+            ingredientTags.querySelectorAll("button").forEach(function (button) {
+                button.addEventListener("click", function () {
+                    removeIngredient(Number(button.dataset.index));
+                });
             });
         }
 
-
         function saveInventory() {
-            localStorage.setItem(
-                "recipeAIInventory",
-                JSON.stringify(inventory)
-            );
+            localStorage.setItem("recipeAIInventory", JSON.stringify(inventory));
         }
-
 
         function loadInventory() {
             try {
-                const saved =
-                    localStorage.getItem(
-                        "recipeAIInventory"
-                    );
-
-                if (!saved) {
-                    return [];
-                }
-
+                const saved = localStorage.getItem("recipeAIInventory");
+                if (!saved) return [];
                 const parsed = JSON.parse(saved);
-
-                if (!Array.isArray(parsed)) {
-                    return [];
-                }
-
-                return parsed;
-            }
-            catch (error) {
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (error) {
                 return [];
             }
+        }
+
+        function inventoryNames() {
+            return inventory.map(function (item) { return item.name; });
+        }
+
+        function haveIngredient(ingredient) {
+            return inventoryNames().some(function (owned) {
+                return IngredientNormalizer.sameFood(ingredient, owned);
+            });
         }
 
 
         /* ========================================
            5. 식단 데이터
         ======================================== */
-
         const mealLibrary = [
-            {
-                name: "두부구이 · 시금치나물 · 잡곡밥",
-                protein: "두부",
-                vegetable: "시금치",
-                time: 20,
-                soft: true,
-                ingredients: ["두부", "시금치", "잡곡"],
-                note: "간장은 찍어 먹을 만큼만 사용하세요."
-            },
-            {
-                name: "채소 계란찜 · 오이무침 · 현미밥",
-                protein: "계란",
-                vegetable: "오이",
-                time: 20,
-                soft: true,
-                ingredients: ["계란", "오이", "현미"],
-                note: "계란찜은 부드럽고 조리가 간단합니다."
-            },
-            {
-                name: "고등어구이 · 양배추찜 · 잡곡밥",
-                protein: "고등어",
-                vegetable: "양배추",
-                time: 25,
-                soft: false,
-                ingredients: ["고등어", "양배추", "잡곡"],
-                note: "생선에 간이 되어 있다면 추가 소금은 생략하세요."
-            },
-            {
-                name: "닭안심 채소볶음 · 현미밥",
-                protein: "닭안심",
-                vegetable: "양배추",
-                time: 25,
-                soft: true,
-                ingredients: ["닭안심", "양배추", "양파", "현미"],
-                note: "닭고기는 작게 잘라 부드럽게 익혀 주세요."
-            },
-            {
-                name: "콩나물밥 · 두부부침",
-                protein: "두부",
-                vegetable: "콩나물",
-                time: 25,
-                soft: true,
-                ingredients: ["콩나물", "두부", "쌀"],
-                note: "양념장은 따로 두고 소량씩 사용하세요."
-            },
-            {
-                name: "버섯 계란덮밥 · 김치 소량",
-                protein: "계란",
-                vegetable: "버섯",
-                time: 15,
-                soft: true,
-                ingredients: ["버섯", "계란", "밥", "김치"],
-                note: "김치는 작은 접시에 소량만 담으세요."
-            },
-            {
-                name: "연두부 비빔밥 · 구운 김",
-                protein: "연두부",
-                vegetable: "상추",
-                time: 15,
-                soft: true,
-                ingredients: ["연두부", "상추", "밥", "김"],
-                note: "고추장 대신 간장 양념을 소량 활용할 수 있습니다."
-            },
-            {
-                name: "삼치구이 · 애호박볶음 · 잡곡밥",
-                protein: "삼치",
-                vegetable: "애호박",
-                time: 25,
-                soft: false,
-                ingredients: ["삼치", "애호박", "잡곡"],
-                note: "애호박은 기름을 많이 흡수하지 않도록 약불로 익히세요."
-            },
-            {
-                name: "돼지고기 양배추볶음 · 현미밥",
-                protein: "돼지고기",
-                vegetable: "양배추",
-                time: 25,
-                soft: true,
-                ingredients: ["돼지고기", "양배추", "양파", "현미"],
-                note: "기름이 적은 부위를 사용하세요."
-            },
-            {
-                name: "두부 버섯조림 · 브로콜리 · 잡곡밥",
-                protein: "두부",
-                vegetable: "브로콜리",
-                time: 25,
-                soft: true,
-                ingredients: ["두부", "버섯", "브로콜리", "잡곡"],
-                note: "조림 국물은 많이 먹지 않는 것이 좋습니다."
-            },
-            {
-                name: "닭가슴살 채소카레 · 밥 소량",
-                protein: "닭가슴살",
-                vegetable: "당근",
-                time: 30,
-                soft: true,
-                ingredients: ["닭가슴살", "당근", "양파", "카레", "밥"],
-                note: "카레 가루는 나트륨을 고려해 적당량 사용하세요."
-            },
-            {
-                name: "참치 채소볶음밥 · 오이",
-                protein: "참치",
-                vegetable: "오이",
-                time: 15,
-                soft: true,
-                ingredients: ["참치", "채소", "밥", "오이"],
-                note: "참치 통조림은 기름이나 국물을 빼고 사용하세요."
-            },
-            {
-                name: "소고기 무볶음 · 시금치 · 현미밥",
-                protein: "소고기",
-                vegetable: "무",
-                time: 25,
-                soft: true,
-                ingredients: ["소고기", "무", "시금치", "현미"],
-                note: "소고기는 기름이 적은 부위를 적당량 사용하세요."
-            },
-            {
-                name: "잔치국수 · 삶은 계란 · 채소 고명",
-                protein: "계란",
-                vegetable: "애호박",
-                time: 20,
-                soft: true,
-                ingredients: ["국수", "계란", "애호박", "당근"],
-                note: "국물은 적게 먹고 채소 고명을 넉넉히 올리세요."
-            },
-            {
-                name: "순두부 채소국 · 잡곡밥",
-                protein: "순두부",
-                vegetable: "애호박",
-                time: 20,
-                soft: true,
-                ingredients: ["순두부", "애호박", "버섯", "잡곡"],
-                note: "국은 싱겁게 끓이고 건더기 중심으로 드세요."
-            },
-            {
-                name: "꽁치구이 · 무생채 · 현미밥",
-                protein: "꽁치",
-                vegetable: "무",
-                time: 25,
-                soft: false,
-                ingredients: ["꽁치", "무", "현미"],
-                note: "무생채는 설탕과 소금을 줄여 만드세요."
-            },
-            {
-                name: "두부 계란전 · 양배추무침 · 잡곡밥",
-                protein: "두부",
-                vegetable: "양배추",
-                time: 25,
-                soft: true,
-                ingredients: ["두부", "계란", "양배추", "잡곡"],
-                note: "두부와 계란을 함께 사용해 단백질 반찬을 만듭니다."
-            },
-            {
-                name: "닭고기 버섯볶음 · 현미밥",
-                protein: "닭고기",
-                vegetable: "버섯",
-                time: 20,
-                soft: true,
-                ingredients: ["닭고기", "버섯", "양파", "현미"],
-                note: "간장 대신 후추와 마늘로 풍미를 더할 수 있습니다."
-            },
-            {
-                name: "돼지고기 수육 · 쌈채소 · 밥 소량",
-                protein: "돼지고기",
-                vegetable: "상추",
-                time: 30,
-                soft: true,
-                ingredients: ["돼지고기", "상추", "오이", "밥"],
-                note: "쌈장 사용량을 줄이고 채소를 충분히 드세요."
-            },
-            {
-                name: "연어 채소구이 · 잡곡밥",
-                protein: "연어",
-                vegetable: "브로콜리",
-                time: 25,
-                soft: true,
-                ingredients: ["연어", "브로콜리", "양파", "잡곡"],
-                note: "소스 대신 레몬즙을 곁들이면 좋습니다."
-            },
-            {
-                name: "콩비지 채소전 · 오이무침 · 현미밥",
-                protein: "콩비지",
-                vegetable: "오이",
-                time: 25,
-                soft: true,
-                ingredients: ["콩비지", "채소", "오이", "현미"],
-                note: "기름을 적게 두르고 작은 크기로 부쳐 주세요."
-            },
-            {
-                name: "두부 된장비빔밥",
-                protein: "두부",
-                vegetable: "상추",
-                time: 15,
-                soft: true,
-                ingredients: ["두부", "상추", "밥", "된장"],
-                note: "된장은 소량만 넣고 채소를 넉넉히 사용하세요."
-            },
-            {
-                name: "계란말이 · 브로콜리 · 잡곡밥",
-                protein: "계란",
-                vegetable: "브로콜리",
-                time: 20,
-                soft: true,
-                ingredients: ["계란", "브로콜리", "잡곡"],
-                note: "계란말이에 잘게 썬 채소를 넣어 주세요."
-            },
-            {
-                name: "냉장고 채소 두부볶음 · 현미밥",
-                protein: "두부",
-                vegetable: "냉장고 채소",
-                time: 15,
-                soft: true,
-                ingredients: ["두부", "냉장고 채소", "현미"],
-                note: "남은 채소를 소진하는 냉장고 정리 메뉴입니다."
-            },
-            {
-                name: "북어 계란국 · 시금치 · 잡곡밥",
-                protein: "북어",
-                vegetable: "시금치",
-                time: 20,
-                soft: true,
-                ingredients: ["북어", "계란", "시금치", "잡곡"],
-                note: "국은 싱겁게 끓이고 건더기를 중심으로 드세요."
-            },
-            {
-                name: "새우 애호박볶음 · 현미밥",
-                protein: "새우",
-                vegetable: "애호박",
-                time: 20,
-                soft: true,
-                ingredients: ["새우", "애호박", "양파", "현미"],
-                note: "새우 자체의 짠맛을 고려해 소금은 최소화하세요."
-            },
-            {
-                name: "닭안심 계란덮밥 · 오이무침",
-                protein: "닭안심",
-                vegetable: "오이",
-                time: 20,
-                soft: true,
-                ingredients: ["닭안심", "계란", "밥", "오이"],
-                note: "덮밥 소스는 적게 넣고 오이를 곁들이세요."
-            },
-            {
-                name: "냉장고 정리 잡곡볶음밥 · 연두부",
-                protein: "연두부",
-                vegetable: "냉장고 채소",
-                time: 15,
-                soft: true,
-                ingredients: ["잡곡밥", "연두부", "냉장고 채소"],
-                note: "한 달 마지막에 남은 재료를 정리하는 메뉴입니다."
-            }
+            { name: "두부구이 · 시금치나물 · 잡곡밥", protein: "두부", vegetable: "시금치", time: 20, soft: true, ingredients: ["두부", "시금치", "잡곡"], note: "간장은 찍어 먹을 만큼만 사용하세요." },
+            { name: "채소 계란찜 · 오이무침 · 현미밥", protein: "계란", vegetable: "오이", time: 20, soft: true, ingredients: ["계란", "오이", "현미"], note: "계란찜은 부드럽고 조리가 간단합니다." },
+            { name: "고등어구이 · 양배추찜 · 잡곡밥", protein: "고등어", vegetable: "양배추", time: 25, soft: false, ingredients: ["고등어", "양배추", "잡곡"], note: "생선에 간이 되어 있다면 추가 소금은 생략하세요." },
+            { name: "닭안심 채소볶음 · 현미밥", protein: "닭안심", vegetable: "양배추", time: 25, soft: true, ingredients: ["닭안심", "양배추", "양파", "현미"], note: "닭고기는 작게 잘라 부드럽게 익혀 주세요." },
+            { name: "콩나물밥 · 두부부침", protein: "두부", vegetable: "콩나물", time: 25, soft: true, ingredients: ["콩나물", "두부", "쌀"], note: "양념장은 따로 두고 소량씩 사용하세요." },
+            { name: "버섯 계란덮밥 · 김치 소량", protein: "계란", vegetable: "버섯", time: 15, soft: true, ingredients: ["느타리버섯", "계란", "밥", "김치"], note: "김치는 작은 접시에 소량만 담으세요." },
+            { name: "연두부 비빔밥 · 구운 김", protein: "연두부", vegetable: "상추", time: 15, soft: true, ingredients: ["연두부", "상추", "밥", "김"], note: "고추장 대신 간장 양념을 소량 활용할 수 있습니다." },
+            { name: "삼치구이 · 애호박볶음 · 잡곡밥", protein: "삼치", vegetable: "애호박", time: 25, soft: false, ingredients: ["삼치", "애호박", "잡곡"], note: "애호박은 기름을 많이 흡수하지 않도록 약불로 익히세요." },
+            { name: "돼지고기 양배추볶음 · 현미밥", protein: "돼지고기", vegetable: "양배추", time: 25, soft: true, ingredients: ["돼지고기", "양배추", "양파", "현미"], note: "기름이 적은 부위를 사용하세요." },
+            { name: "두부 버섯조림 · 브로콜리 · 잡곡밥", protein: "두부", vegetable: "브로콜리", time: 25, soft: true, ingredients: ["두부", "표고버섯", "브로콜리", "잡곡"], note: "조림 국물은 많이 먹지 않는 것이 좋습니다." },
+            { name: "닭가슴살 채소카레 · 밥 소량", protein: "닭가슴살", vegetable: "당근", time: 30, soft: true, ingredients: ["닭가슴살", "당근", "양파", "카레가루", "밥"], note: "카레 가루는 나트륨을 고려해 적당량 사용하세요." },
+            { name: "참치 채소볶음밥 · 오이", protein: "참치", vegetable: "오이", time: 15, soft: true, ingredients: ["참치캔", "채소", "밥", "오이"], note: "참치 통조림은 기름이나 국물을 빼고 사용하세요." },
+            { name: "소고기 무볶음 · 시금치 · 현미밥", protein: "소고기", vegetable: "무", time: 25, soft: true, ingredients: ["소고기", "무", "시금치", "현미"], note: "소고기는 기름이 적은 부위를 적당량 사용하세요." },
+            { name: "잔치국수 · 삶은 계란 · 채소 고명", protein: "계란", vegetable: "애호박", time: 20, soft: true, ingredients: ["국수", "계란", "애호박", "당근"], note: "국물은 적게 먹고 채소 고명을 넉넉히 올리세요." },
+            { name: "순두부 채소국 · 잡곡밥", protein: "순두부", vegetable: "애호박", time: 20, soft: true, ingredients: ["순두부", "애호박", "팽이버섯", "잡곡"], note: "국은 싱겁게 끓이고 건더기 중심으로 드세요." },
+            { name: "꽁치구이 · 무생채 · 현미밥", protein: "꽁치", vegetable: "무", time: 25, soft: false, ingredients: ["꽁치", "무", "현미"], note: "무생채는 설탕과 소금을 줄여 만드세요." },
+            { name: "두부 계란전 · 양배추무침 · 잡곡밥", protein: "두부", vegetable: "양배추", time: 25, soft: true, ingredients: ["두부", "계란", "양배추", "잡곡"], note: "두부와 계란을 함께 사용해 단백질 반찬을 만듭니다." },
+            { name: "닭고기 버섯볶음 · 현미밥", protein: "닭고기", vegetable: "버섯", time: 20, soft: true, ingredients: ["닭고기", "새송이버섯", "양파", "현미"], note: "간장 대신 후추와 마늘로 풍미를 더할 수 있습니다." },
+            { name: "돼지고기 수육 · 쌈채소 · 밥 소량", protein: "돼지고기", vegetable: "상추", time: 30, soft: true, ingredients: ["돼지고기", "상추", "오이", "밥"], note: "쌈장 사용량을 줄이고 채소를 충분히 드세요." },
+            { name: "연어 채소구이 · 잡곡밥", protein: "연어", vegetable: "브로콜리", time: 25, soft: true, ingredients: ["연어", "브로콜리", "양파", "잡곡"], note: "소스 대신 레몬즙을 곁들이면 좋습니다." },
+            { name: "콩비지 채소전 · 오이무침 · 현미밥", protein: "콩비지", vegetable: "오이", time: 25, soft: true, ingredients: ["콩비지", "채소", "오이", "현미"], note: "기름을 적게 두르고 작은 크기로 부쳐 주세요." },
+            { name: "두부 된장비빔밥", protein: "두부", vegetable: "상추", time: 15, soft: true, ingredients: ["두부", "상추", "밥", "된장"], note: "된장은 소량만 넣고 채소를 넉넉히 사용하세요." },
+            { name: "계란말이 · 브로콜리 · 잡곡밥", protein: "계란", vegetable: "브로콜리", time: 20, soft: true, ingredients: ["계란", "브로콜리", "잡곡"], note: "계란말이에 잘게 썬 채소를 넣어 주세요." },
+            { name: "냉장고 채소 두부볶음 · 현미밥", protein: "두부", vegetable: "냉장고 채소", time: 15, soft: true, ingredients: ["두부", "냉장고 채소", "현미"], note: "남은 채소를 소진하는 냉장고 정리 메뉴입니다." },
+            { name: "북어 계란국 · 시금치 · 잡곡밥", protein: "북어", vegetable: "시금치", time: 20, soft: true, ingredients: ["북어", "계란", "시금치", "잡곡"], note: "국은 싱겁게 끓이고 건더기를 중심으로 드세요." },
+            { name: "새우 애호박볶음 · 현미밥", protein: "새우", vegetable: "애호박", time: 20, soft: true, ingredients: ["새우", "애호박", "양파", "현미"], note: "새우 자체의 짠맛을 고려해 소금은 최소화하세요." },
+            { name: "닭안심 계란덮밥 · 오이무침", protein: "닭안심", vegetable: "오이", time: 20, soft: true, ingredients: ["닭안심", "계란", "밥", "오이"], note: "덮밥 소스는 적게 넣고 오이를 곁들이세요." },
+            { name: "냉장고 정리 잡곡볶음밥 · 연두부", protein: "연두부", vegetable: "냉장고 채소", time: 15, soft: true, ingredients: ["잡곡", "연두부", "냉장고 채소"], note: "한 달 마지막에 남은 재료를 정리하는 메뉴입니다." }
         ];
 
 
         /* ========================================
            6. 식단 생성
         ======================================== */
-
-        const ageGroup =
-            document.getElementById("ageGroup");
-
-        const peopleCount =
-            document.getElementById("peopleCount");
-
-        const cookingTime =
-            document.getElementById("cookingTime");
-
-        const planMethod =
-            document.getElementById("planMethod");
-
-        const lowSalt =
-            document.getElementById("lowSalt");
-
-        const softFood =
-            document.getElementById("softFood");
-
-        const weightCare =
-            document.getElementById("weightCare");
-
-        const avoidSoup =
-            document.getElementById("avoidSoup");
-
-        const excludedFoods =
-            document.getElementById("excludedFoods");
-
-        const generatePlanButton =
-            document.getElementById("generatePlanButton");
-
-        const loadPlanButton =
-            document.getElementById("loadPlanButton");
-
-        const deletePlanButton =
-            document.getElementById("deletePlanButton");
-
-        const planMessage =
-            document.getElementById("planMessage");
-
-        const mealPlanResult =
-            document.getElementById("mealPlanResult");
-
-        const planSummary =
-            document.getElementById("planSummary");
-
-        const mealGrid =
-            document.getElementById("mealGrid");
-
-        const shoppingTitle =
-            document.getElementById("shoppingTitle");
-
-        const shoppingList =
-            document.getElementById("shoppingList");
-
-        const weekTabs =
-            document.querySelectorAll(".week-tab");
+        const ageGroup = document.getElementById("ageGroup");
+        const peopleCount = document.getElementById("peopleCount");
+        const cookingTime = document.getElementById("cookingTime");
+        const planMethod = document.getElementById("planMethod");
+        const lowSalt = document.getElementById("lowSalt");
+        const softFood = document.getElementById("softFood");
+        const weightCare = document.getElementById("weightCare");
+        const avoidSoup = document.getElementById("avoidSoup");
+        const excludedFoods = document.getElementById("excludedFoods");
+        const generatePlanButton = document.getElementById("generatePlanButton");
+        const loadPlanButton = document.getElementById("loadPlanButton");
+        const deletePlanButton = document.getElementById("deletePlanButton");
+        const planMessage = document.getElementById("planMessage");
+        const mealPlanResult = document.getElementById("mealPlanResult");
+        const planSummary = document.getElementById("planSummary");
+        const mealGrid = document.getElementById("mealGrid");
+        const shoppingTitle = document.getElementById("shoppingTitle");
+        const shoppingList = document.getElementById("shoppingList");
+        const weekTabs = document.querySelectorAll(".week-tab");
 
         let currentPlan = [];
         let currentWeek = 0;
 
+        generatePlanButton.addEventListener("click", generateMealPlan);
+        loadPlanButton.addEventListener("click", loadSavedPlan);
 
-        generatePlanButton.addEventListener(
-            "click",
-            generateMealPlan
-        );
-
-        loadPlanButton.addEventListener(
-            "click",
-            loadSavedPlan
-        );
-
-        deletePlanButton.addEventListener(
-            "click",
-            function () {
-                localStorage.removeItem(
-                    "recipeAIMonthlyPlan"
-                );
-
-                currentPlan = [];
-                mealPlanResult.classList.remove("show");
-
-                showMessage(
-                    planMessage,
-                    "저장된 식단을 삭제했습니다.",
-                    "success"
-                );
-            }
-        );
-
+        deletePlanButton.addEventListener("click", function () {
+            localStorage.removeItem("recipeAIMonthlyPlan");
+            currentPlan = [];
+            mealPlanResult.classList.remove("show");
+            showMessage(planMessage, "저장된 식단을 삭제했습니다.", "success");
+        });
 
         weekTabs.forEach(function (tab) {
             tab.addEventListener("click", function () {
-                currentWeek =
-                    Number(tab.dataset.week);
-
+                currentWeek = Number(tab.dataset.week);
                 updateWeekTabs();
                 renderWeek(currentWeek);
             });
         });
 
+        // 제외 재료: 표준화 후 상·하위 재료까지 함께 제외 (예: "버섯" → 표고·느타리 등)
+        function isExcluded(meal, excludedList) {
+            return excludedList.some(function (excludedFood) {
+                return meal.name.toLowerCase().includes(excludedFood.toLowerCase()) ||
+                    meal.ingredients.some(function (ingredient) {
+                        return IngredientNormalizer.sameFood(excludedFood, ingredient) ||
+                            IngredientNormalizer.sameFood(ingredient, excludedFood);
+                    });
+            });
+        }
 
         function generateMealPlan() {
             hideMessage(planMessage);
 
-            const maxTime =
-                cookingTime.value === "any"
-                    ? 999
-                    : Number(cookingTime.value);
+            const maxTime = cookingTime.value === "any" ? 999 : Number(cookingTime.value);
+            const excluded = splitFoods(excludedFoods.value);
 
-            const excluded =
-                splitFoods(
-                    excludedFoods.value.toLowerCase()
-                );
-
-            const inventoryNames =
-                inventory.map(function (item) {
-                    return item.name.toLowerCase();
-                });
-
-            let available = mealLibrary.filter(
-                function (meal) {
-                    const timeMatches =
-                        meal.time <= maxTime;
-
-                    const softnessMatches =
-                        !softFood.checked ||
-                        meal.soft === true;
-
-                    const excludedMatches =
-                        !excluded.some(
-                            function (excludedFood) {
-                                return (
-                                    meal.name
-                                        .toLowerCase()
-                                        .includes(excludedFood) ||
-                                    meal.ingredients.some(
-                                        function (ingredient) {
-                                            return ingredient
-                                                .toLowerCase()
-                                                .includes(
-                                                    excludedFood
-                                                );
-                                        }
-                                    )
-                                );
-                            }
-                        );
-
-                    const soupMatches =
-                        !avoidSoup.checked ||
-                        !meal.name.includes("국");
-
-                    return (
-                        timeMatches &&
-                        softnessMatches &&
-                        excludedMatches &&
-                        soupMatches
-                    );
-                }
-            );
+            let available = mealLibrary.filter(function (meal) {
+                const timeMatches = meal.time <= maxTime;
+                const softnessMatches = !softFood.checked || meal.soft === true;
+                const soupMatches = !avoidSoup.checked || !meal.name.includes("국");
+                return timeMatches && softnessMatches && soupMatches && !isExcluded(meal, excluded);
+            });
 
             if (available.length < 7) {
-                available = mealLibrary.filter(
-                    function (meal) {
-                        return !excluded.some(
-                            function (excludedFood) {
-                                return meal.name
-                                    .toLowerCase()
-                                    .includes(excludedFood);
-                            }
-                        );
-                    }
-                );
-            }
-
-            if (
-                planMethod.value === "inventory" &&
-                inventoryNames.length > 0
-            ) {
-                available.sort(function (a, b) {
-                    const aScore =
-                        getInventoryScore(
-                            a,
-                            inventoryNames
-                        );
-
-                    const bScore =
-                        getInventoryScore(
-                            b,
-                            inventoryNames
-                        );
-
-                    return bScore - aScore;
+                available = mealLibrary.filter(function (meal) {
+                    return !isExcluded(meal, excluded);
                 });
             }
 
+            if (available.length === 0) {
+                showMessage(planMessage, "제외 조건이 너무 많아 식단을 만들 수 없습니다. 제외 재료를 줄여 주세요.", "error");
+                return;
+            }
+
+            if (planMethod.value === "inventory" && inventory.length > 0) {
+                available.sort(function (a, b) {
+                    return getInventoryScore(b) - getInventoryScore(a);
+                });
+            }
+
+            const weekdays = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"];
             currentPlan = [];
 
             for (let day = 0; day < 28; day++) {
-                const meal =
-                    available[
-                        day % available.length
-                    ];
+                const meal = available[day % available.length];
 
                 currentPlan.push({
                     dayNumber: day + 1,
                     week: Math.floor(day / 7),
-                    weekday: [
-                        "월요일",
-                        "화요일",
-                        "수요일",
-                        "목요일",
-                        "금요일",
-                        "토요일",
-                        "일요일"
-                    ][day % 7],
+                    weekday: weekdays[day % 7],
                     name: meal.name,
                     protein: meal.protein,
                     vegetable: meal.vegetable,
@@ -2218,256 +1728,102 @@
             }
 
             currentWeek = 0;
-
             savePlan();
-
             updateWeekTabs();
             renderPlanSummary();
             renderWeek(currentWeek);
-
             mealPlanResult.classList.add("show");
 
-            showMessage(
-                planMessage,
-                "4주 저녁 식단을 만들고 이 브라우저에 저장했습니다.",
-                "success"
-            );
-
-            mealPlanResult.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            showMessage(planMessage, "4주 저녁 식단을 만들고 이 브라우저에 저장했습니다.", "success");
+            mealPlanResult.scrollIntoView({ behavior: "smooth", block: "start" });
         }
 
-
-        function getInventoryScore(
-            meal,
-            inventoryNames
-        ) {
-            return meal.ingredients.reduce(
-                function (score, ingredient) {
-                    const found =
-                        inventoryNames.some(
-                            function (inventoryItem) {
-                                return (
-                                    ingredient
-                                        .toLowerCase()
-                                        .includes(
-                                            inventoryItem
-                                        ) ||
-                                    inventoryItem.includes(
-                                        ingredient.toLowerCase()
-                                    )
-                                );
-                            }
-                        );
-
-                    return score + (found ? 1 : 0);
-                },
-                0
-            );
+        // 보유 재료 비율로 점수 계산 (재료 수가 많은 메뉴가 유리하지 않도록)
+        function getInventoryScore(meal) {
+            const matched = meal.ingredients.filter(haveIngredient).length;
+            return matched / meal.ingredients.length;
         }
-
 
         function buildHealthNote(meal) {
             let note = meal.note;
-
-            if (lowSalt.checked) {
-                note +=
-                    " 소금·간장·된장 사용량은 줄이세요.";
-            }
-
-            if (weightCare.checked) {
-                note +=
-                    " 밥은 작은 공기 기준으로 조절하고 채소를 먼저 드세요.";
-            }
-
-            if (softFood.checked) {
-                note +=
-                    " 재료를 작게 썰고 충분히 익혀 부드럽게 조리하세요.";
-            }
-
+            if (lowSalt.checked) note += " 소금·간장·된장 사용량은 줄이세요.";
+            if (weightCare.checked) note += " 밥은 작은 공기 기준으로 조절하고 채소를 먼저 드세요.";
+            if (softFood.checked) note += " 재료를 작게 썰고 충분히 익혀 부드럽게 조리하세요.";
             return note;
         }
 
-
         function renderPlanSummary() {
-            const methodText =
-                planMethod.value === "inventory"
-                    ? "냉장고 재료 우선"
-                    : "일반 한국 가정식";
-
+            const methodText = planMethod.value === "inventory" ? "냉장고 재료 우선" : "일반 한국 가정식";
             const options = [];
 
-            if (lowSalt.checked) {
-                options.push("싱겁게");
-            }
+            if (lowSalt.checked) options.push("싱겁게");
+            if (softFood.checked) options.push("부드럽게");
+            if (weightCare.checked) options.push("체중 관리");
+            if (avoidSoup.checked) options.push("국·찌개 줄이기");
 
-            if (softFood.checked) {
-                options.push("부드럽게");
-            }
-
-            if (weightCare.checked) {
-                options.push("체중 관리");
-            }
-
-            if (avoidSoup.checked) {
-                options.push("국·찌개 줄이기");
-            }
+            const ageText = ageGroup.options[ageGroup.selectedIndex].text;
 
             planSummary.innerHTML =
-                "<strong>식단 설정:</strong> " +
-                escapeHtml(ageGroup.value) +
-                " / " +
-                escapeHtml(peopleCount.value) +
-                "명 / " +
-                escapeHtml(methodText) +
-                "<br>" +
-
-                "<strong>적용 옵션:</strong> " +
-                escapeHtml(
-                    options.length
-                        ? options.join(", ")
-                        : "기본 균형식"
-                );
+                "<strong>식단 설정:</strong> " + escapeHtml(ageText) + " / " +
+                escapeHtml(peopleCount.value) + "명 / " + escapeHtml(methodText) + "<br>" +
+                "<strong>적용 옵션:</strong> " + escapeHtml(options.length ? options.join(", ") : "기본 균형식");
         }
 
-
         function renderWeek(weekIndex) {
-            const weekMeals =
-                currentPlan.filter(
-                    function (meal) {
-                        return meal.week === weekIndex;
-                    }
-                );
+            const weekMeals = currentPlan.filter(function (meal) {
+                return meal.week === weekIndex;
+            });
 
-            mealGrid.innerHTML =
-                weekMeals
-                    .map(function (meal) {
-                        return (
-                            "<article class='meal-card'>" +
+            mealGrid.innerHTML = weekMeals.map(function (meal) {
+                const owned = meal.ingredients.filter(haveIngredient);
+                const ownedText = owned.length
+                    ? "<p class='meal-meta'>🧊 보유 재료: " + escapeHtml(owned.join(", ")) + "</p>"
+                    : "";
 
-                            "<div class='day'>" +
-                            escapeHtml(
-                                meal.dayNumber +
-                                "일차 · " +
-                                meal.weekday
-                            ) +
-                            "</div>" +
-
-                            "<h4>" +
-                            escapeHtml(meal.name) +
-                            "</h4>" +
-
-                            "<p>" +
-                            "<strong>단백질:</strong> " +
-                            escapeHtml(meal.protein) +
-                            " · " +
-
-                            "<strong>채소:</strong> " +
-                            escapeHtml(meal.vegetable) +
-                            "</p>" +
-
-                            "<p class='meal-meta'>" +
-                            "예상 조리시간: " +
-                            escapeHtml(meal.time) +
-                            "분 · " +
-                            escapeHtml(
-                                peopleCount.value
-                            ) +
-                            "인 기준" +
-                            "</p>" +
-
-                            "<p class='meal-note'>" +
-                            escapeHtml(meal.note) +
-                            "</p>" +
-
-                            "</article>"
-                        );
-                    })
-                    .join("");
+                return "<article class='meal-card'>" +
+                    "<div class='day'>" + escapeHtml(meal.dayNumber + "일차 · " + meal.weekday) + "</div>" +
+                    "<h4>" + escapeHtml(meal.name) + "</h4>" +
+                    "<p><strong>단백질:</strong> " + escapeHtml(meal.protein) +
+                    " · <strong>채소:</strong> " + escapeHtml(meal.vegetable) + "</p>" +
+                    "<p class='meal-meta'>예상 조리시간: " + escapeHtml(meal.time) + "분 · " +
+                    escapeHtml(peopleCount.value) + "인 기준</p>" +
+                    ownedText +
+                    "<p class='meal-note'>" + escapeHtml(meal.note) + "</p>" +
+                    "</article>";
+            }).join("");
 
             renderShoppingList(weekMeals, weekIndex);
         }
 
-
-        function renderShoppingList(
-            weekMeals,
-            weekIndex
-        ) {
-            const inventoryNames =
-                inventory.map(function (item) {
-                    return item.name.toLowerCase();
-                });
-
+        function renderShoppingList(weekMeals, weekIndex) {
             const shoppingItems = [];
+            const shoppingKeys = [];
 
             weekMeals.forEach(function (meal) {
-                meal.ingredients.forEach(
-                    function (ingredient) {
-                        const alreadyHave =
-                            inventoryNames.some(
-                                function (inventoryItem) {
-                                    return (
-                                        ingredient
-                                            .toLowerCase()
-                                            .includes(
-                                                inventoryItem
-                                            ) ||
-                                        inventoryItem.includes(
-                                            ingredient
-                                                .toLowerCase()
-                                        )
-                                    );
-                                }
-                            );
-
-                        if (
-                            !alreadyHave &&
-                            !shoppingItems.includes(
-                                ingredient
-                            )
-                        ) {
-                            shoppingItems.push(ingredient);
-                        }
+                meal.ingredients.forEach(function (ingredient) {
+                    const key = IngredientNormalizer.canonical(ingredient);
+                    if (!haveIngredient(ingredient) && !shoppingKeys.includes(key)) {
+                        shoppingKeys.push(key);
+                        shoppingItems.push(ingredient);
                     }
-                );
+                });
             });
 
-            shoppingTitle.textContent =
-                "🛒 " +
-                (weekIndex + 1) +
-                "주차 장보기 목록";
+            shoppingTitle.textContent = "🛒 " + (weekIndex + 1) + "주차 장보기 목록";
 
             if (shoppingItems.length === 0) {
-                shoppingList.innerHTML =
-                    "<li>현재 냉장고 재료로 구성 가능합니다.</li>";
-
+                shoppingList.innerHTML = "<li>현재 냉장고 재료로 구성 가능합니다.</li>";
                 return;
             }
 
-            shoppingList.innerHTML =
-                shoppingItems
-                    .map(function (item) {
-                        return (
-                            "<li>" +
-                            escapeHtml(item) +
-                            "</li>"
-                        );
-                    })
-                    .join("");
+            shoppingList.innerHTML = shoppingItems.map(function (item) {
+                return "<li>" + escapeHtml(item) + "</li>";
+            }).join("");
         }
-
 
         function updateWeekTabs() {
             weekTabs.forEach(function (tab) {
-                const tabWeek =
-                    Number(tab.dataset.week);
-
-                tab.classList.toggle(
-                    "active",
-                    tabWeek === currentWeek
-                );
+                tab.classList.toggle("active", Number(tab.dataset.week) === currentWeek);
             });
         }
 
@@ -2475,7 +1831,6 @@
         /* ========================================
            7. 식단 저장 및 불러오기
         ======================================== */
-
         function savePlan() {
             const data = {
                 plan: currentPlan,
@@ -2488,105 +1843,51 @@
                     softFood: softFood.checked,
                     weightCare: weightCare.checked,
                     avoidSoup: avoidSoup.checked,
-                    excludedFoods:
-                        excludedFoods.value
+                    excludedFoods: excludedFoods.value
                 }
             };
 
-            localStorage.setItem(
-                "recipeAIMonthlyPlan",
-                JSON.stringify(data)
-            );
+            localStorage.setItem("recipeAIMonthlyPlan", JSON.stringify(data));
         }
-
 
         function loadSavedPlan() {
             try {
-                const saved =
-                    localStorage.getItem(
-                        "recipeAIMonthlyPlan"
-                    );
+                const saved = localStorage.getItem("recipeAIMonthlyPlan");
 
                 if (!saved) {
-                    showMessage(
-                        planMessage,
-                        "저장된 식단이 없습니다. 먼저 식단을 만들어 주세요.",
-                        "info"
-                    );
-
+                    showMessage(planMessage, "저장된 식단이 없습니다. 먼저 식단을 만들어 주세요.", "info");
                     return;
                 }
 
                 const data = JSON.parse(saved);
 
-                if (
-                    !data ||
-                    !Array.isArray(data.plan)
-                ) {
-                    throw new Error(
-                        "잘못된 저장 데이터"
-                    );
+                if (!data || !Array.isArray(data.plan)) {
+                    throw new Error("잘못된 저장 데이터");
                 }
 
                 currentPlan = data.plan;
 
                 if (data.settings) {
-                    ageGroup.value =
-                        data.settings.age || "50-64";
-
-                    peopleCount.value =
-                        data.settings.people || "2";
-
-                    cookingTime.value =
-                        data.settings.cookingTime || "30";
-
-                    planMethod.value =
-                        data.settings.method || "inventory";
-
-                    lowSalt.checked =
-                        Boolean(
-                            data.settings.lowSalt
-                        );
-
-                    softFood.checked =
-                        Boolean(
-                            data.settings.softFood
-                        );
-
-                    weightCare.checked =
-                        Boolean(
-                            data.settings.weightCare
-                        );
-
-                    avoidSoup.checked =
-                        Boolean(
-                            data.settings.avoidSoup
-                        );
-
-                    excludedFoods.value =
-                        data.settings.excludedFoods || "";
+                    ageGroup.value = data.settings.age || "50-64";
+                    peopleCount.value = data.settings.people || "2";
+                    cookingTime.value = data.settings.cookingTime || "30";
+                    planMethod.value = data.settings.method || "inventory";
+                    lowSalt.checked = Boolean(data.settings.lowSalt);
+                    softFood.checked = Boolean(data.settings.softFood);
+                    weightCare.checked = Boolean(data.settings.weightCare);
+                    avoidSoup.checked = Boolean(data.settings.avoidSoup);
+                    excludedFoods.value = data.settings.excludedFoods || "";
                 }
 
                 currentWeek = 0;
-
                 updateWeekTabs();
                 renderPlanSummary();
                 renderWeek(currentWeek);
-
                 mealPlanResult.classList.add("show");
 
-                showMessage(
-                    planMessage,
-                    "저장된 식단을 불러왔습니다.",
-                    "success"
-                );
-            }
-            catch (error) {
-                showMessage(
-                    planMessage,
-                    "저장된 식단을 불러오지 못했습니다. 삭제 후 다시 만들어 주세요.",
-                    "error"
-                );
+                showMessage(planMessage, "저장된 식단을 불러왔습니다.", "success");
+            } catch (error) {
+                showMessage(planMessage, "저장된 식단을 불러오지 못했습니다. 삭제 후 다시 만들어 주세요.", "error");
             }
         }
     </script>
